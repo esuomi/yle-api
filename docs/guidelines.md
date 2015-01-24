@@ -34,28 +34,3 @@ version 2.3.1 of the project would be tagged as `2.3.1-rc.3`. Note that releases
 majorly broken version was released by accident, a new patch version must be released following the normal version
 increment rules. It is fine to remove the actual release from artifact repositories but not from the Git repository
 itself - we learn from our mistakes and thus don't hide them, not even when it hurts.
-
-# Working with the repository
-
-Fork the entire repository. Make all changes in your local repository first. Do not push tags. Be aware of multi source
-repositories, especially when submitting patches which modify build files.
-
-## Submitting patches
- 
-Use Pull Requests. Name of your branch does not matter as long as it doesn't collide with the reserved branch patterns
-as described in this document.
-
-A good commit message explains what changed and why. It is fine to have the message in either past or current tense. If
-submitting a multi commit Pull Request, only the first commit needs to follow this rule. Be sensible though, one word
-commits are not beneficial to anyone.
-
-It is up to your personal discretion whether you rebase/squash your branch before creating a Pull Request.
-
-When resolving a GitHub issue, edit the Pull Request message to contain the trigger keyword (*see [Closing issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/)*).
-Do not include the issue reference directly to the actual commit message.
-
-## Reviewing Pull Requests
-
-Allow the build automation (if any) to verify the Pull Request before merging. Other review policies should be agreed
-by the people working on the project, but it is generally advisable to have at least some kind of peer review process
-whenever possible, even in two person teams.
