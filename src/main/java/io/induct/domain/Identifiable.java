@@ -11,6 +11,8 @@ public interface Identifiable<I> {
 
     boolean isIdentified();
 
-    boolean isUnidentified();
+    default boolean isUnidentified() {
+        return !isIdentified();
+    }
 
 }
