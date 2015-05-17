@@ -17,7 +17,7 @@ public abstract class YleApiTestingBase {
     protected static Injector injector;
 
     @BeforeClass
-    public static void preSetUp() throws Exception {
+    public static void preTestingSetUp() throws Exception {
         injector = Guice.createInjector(
                 new DanielModule(),
                 new YleApiModule());
