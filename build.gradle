@@ -10,8 +10,9 @@ repositories {
 
 dependencies {
     compile(group:'io.induct', name:'daniel', version:'0.1+')
-    compile(group:'io.induct', name:'bricks-ddd', version:'0.1+')
     compile(group:'io.induct', name:'http-ning', version:'0.1+')
+    compile(group:'com.google.inject', name:'guice', version:'4.0+')
+    compile(group:'com.google.inject.extensions', name:'guice-multibindings', version:'4.0+')
 }
 
 apply from: file("${rootProject.projectDir}/cradle/library.gradle")
