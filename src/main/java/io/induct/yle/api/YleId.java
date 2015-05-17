@@ -46,13 +46,21 @@ public class YleId implements Identifiable<String> {
     private final String identity;
 
     public YleId(String id) {
-        String prefix = id.substring(0, id.indexOf('-') + 1);
-        this.type = prefixLookup.containsKey(prefix) ? prefixLookup.get(prefix) : Type.UNKNOWN;
+        if (!id.contains("-")) {
+            this.type = Type.UNKNOWN;
+        } else {
+            String prefix = id.substring(0, id.indexOf('-') + 1);
+            this.type = prefixLookup.containsKey(prefix) ? prefixLookup.get(prefix) : Type.UNKNOWN;
+        }
         this.identity = id;
     }
 
     public boolean is(Type type) {
         return type.equals(type);
+    }
+
+    public Type getType() {
+        return type;
     }
 
     @Override
