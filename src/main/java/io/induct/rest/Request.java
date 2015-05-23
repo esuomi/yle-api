@@ -41,11 +41,31 @@ public class Request {
         return call(http::delete);
     }
 
-    private Response call(Method m) {
+    public HttpClient getHttp() {
+        return http;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public Multimap<String, String> getHeaders() {
+        return headers;
+    }
+
+    public Multimap<String, String> getParams() {
+        return params;
+    }
+
+    public InputStream getBody() {
+        return body;
+    }
+
+    protected Response call(Method m) {
         return m.call(url, params, headers, body);
     }
 
-    private interface Method {
+    protected interface Method {
         Response call(String url, Multimap<String, String> params, Multimap<String, String> headers, InputStream body);
     }
 }

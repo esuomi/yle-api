@@ -1,6 +1,8 @@
 package io.induct.yle.api.common;
 
+import com.google.common.util.concurrent.RateLimiter;
 import io.induct.http.HttpClient;
+import io.induct.rest.DefaultRequestBuilder;
 import io.induct.rest.RequestBuilder;
 
 import javax.inject.Inject;
@@ -24,13 +26,13 @@ public class Infrastructure {
         this.appKey = appKey;
     }
 
-    public RequestBuilder createRequestBuilder(String baseUrl) {
-        return new RequestBuilder(httpClient)
+    public RequestBuilder createRequestBuilder(String baseUrl, RateLimiter rateLimiter) {
+        return new RateLimitingRequestBuilder(rateLimiter, new DefaultRequestBuilder(httpClient)
                 .withBaseUrl(baseUrl)
                 .withParams(params -> {
                     params.put("app_id", appId);
                     params.put("app_key", appKey);
-                });
+                }));
     }
 
 }

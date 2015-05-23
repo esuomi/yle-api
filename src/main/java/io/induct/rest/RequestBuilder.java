@@ -1,59 +1,24 @@
 package io.induct.rest;
 
 import com.google.common.collect.Multimap;
-import com.google.common.collect.MultimapBuilder;
-import io.induct.http.HttpClient;
 
-import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.function.Consumer;
 
 /**
- * @since 2015-05-09
+ * @since 2015-05-23
  */
-public class RequestBuilder {
+public interface RequestBuilder {
 
-    private final HttpClient httpClient;
-    private String baseUrl;
-    private String path;
+    RequestBuilder withBaseUrl(String baseUrl);
 
-    private Multimap<String, String> headers = MultimapBuilder.hashKeys().arrayListValues().build();
+    RequestBuilder withPath(String path);
 
-    private Multimap<String, String> params = MultimapBuilder.hashKeys().arrayListValues().build();
+    RequestBuilder withHeaders(Consumer<Multimap<String, String>> contributor);
 
-    private InputStream body = new ByteArrayInputStream(new byte[0]);
+    RequestBuilder withParams(Consumer<Multimap<String, String>> contributor);
 
-    public RequestBuilder(HttpClient httpClient) {
-        this.httpClient = httpClient;
-    }
+    RequestBuilder withBody(InputStream body);
 
-    public RequestBuilder withBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
-        return this;
-    }
-
-    public RequestBuilder withPath(String path) {
-        this.path = path;
-        return this;
-    }
-
-    public RequestBuilder withHeaders(Consumer<Multimap<String, String>> contributor) {
-        contributor.accept(headers);
-        return this;
-    }
-
-    public RequestBuilder withParams(Consumer<Multimap<String, String>> contributor) {
-        contributor.accept(params);
-        return this;
-    }
-
-    public RequestBuilder withBody(InputStream body) {
-        this.body = body;
-        return this;
-    }
-
-    public Request build() {
-        // TODO: Validate url+path
-        return new Request(httpClient, baseUrl + path, headers, params, body);
-    }
+    Request build();
 }

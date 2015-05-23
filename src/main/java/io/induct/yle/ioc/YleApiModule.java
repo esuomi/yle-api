@@ -7,15 +7,18 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.google.common.util.concurrent.RateLimiter;
 import com.google.inject.AbstractModule;
+import com.google.inject.Provides;
 import com.google.inject.multibindings.Multibinder;
-import com.google.inject.name.Names;
 import com.ning.http.client.AsyncHttpClient;
 import io.induct.http.HttpClient;
 import io.induct.http.ning.NingHttpClient;
 import io.induct.yle.api.YleApi;
 import io.induct.yle.api.YleId;
 
+import javax.inject.Named;
+import javax.inject.Singleton;
 import java.io.IOException;
 
 /**
@@ -36,8 +39,12 @@ public class YleApiModule extends AbstractModule {
         });
         Multibinder jacksonModules = Multibinder.newSetBinder(this.binder(), Module.class);
         jacksonModules.addBinding().toInstance(yleApiCustomDeserializers);
+    }
 
-        bind(String.class).annotatedWith(Names.named("yle.api.appId")).toInstance("TODO_YLE_APPID");
-        bind(String.class).annotatedWith(Names.named("yle.api.appKey")).toInstance("TODO_YLE_APPKEY");
+    @Provides
+    @Singleton
+    @Named("yle.api.rateLimit")
+    RateLimiter rateLimiter(@Named("yle.api.rateLimit") String rateLimit) {
+        return RateLimiter.create(Double.parseDouble(rateLimit));
     }
 }

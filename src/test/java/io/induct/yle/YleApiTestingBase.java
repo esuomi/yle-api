@@ -3,10 +3,10 @@ package io.induct.yle;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import io.induct.daniel.DanielModule;
+import io.induct.http.HttpClient;
 import io.induct.yle.ioc.YleApiModule;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import sun.net.www.http.HttpClient;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -21,6 +21,7 @@ public abstract class YleApiTestingBase {
     @BeforeClass
     public static void preTestingSetUp() throws Exception {
         injector = Guice.createInjector(
+                new PropertiesConfigModule(),
                 new DanielModule(),
                 new YleApiModule());
     }
