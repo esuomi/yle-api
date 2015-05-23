@@ -24,8 +24,9 @@ public class Infrastructure {
         this.appKey = appKey;
     }
 
-    public RequestBuilder createRequestBuilder() {
+    public RequestBuilder createRequestBuilder(String baseUrl) {
         return new RequestBuilder(httpClient)
+                .withBaseUrl(baseUrl)
                 .withParams(params -> {
                     params.put("app_id", appId);
                     params.put("app_key", appKey);

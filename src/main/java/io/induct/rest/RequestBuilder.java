@@ -14,7 +14,8 @@ import java.util.function.Consumer;
 public class RequestBuilder {
 
     private final HttpClient httpClient;
-    private String url;
+    private String baseUrl;
+    private String path;
 
     private Multimap<String, String> headers = MultimapBuilder.hashKeys().arrayListValues().build();
 
@@ -26,8 +27,13 @@ public class RequestBuilder {
         this.httpClient = httpClient;
     }
 
-    public RequestBuilder withUrl(String url) {
-        this.url = url;
+    public RequestBuilder withBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
+        return this;
+    }
+
+    public RequestBuilder withPath(String path) {
+        this.path = path;
         return this;
     }
 
@@ -47,7 +53,7 @@ public class RequestBuilder {
     }
 
     public Request build() {
-        // TODO: Validate url
-        return new Request(httpClient, url, headers, params, body);
+        // TODO: Validate url+path
+        return new Request(httpClient, baseUrl + path, headers, params, body);
     }
 }
