@@ -4,7 +4,9 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import io.induct.daniel.DanielModule;
 import io.induct.yle.ioc.YleApiModule;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import sun.net.www.http.HttpClient;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -21,6 +23,11 @@ public abstract class YleApiTestingBase {
         injector = Guice.createInjector(
                 new DanielModule(),
                 new YleApiModule());
+    }
+
+    @AfterClass
+    public static void postTestingSetup() throws Exception {
+        ((AutoCloseable) injector.getInstance(HttpClient.class)).close();
     }
 
     protected InputStream asStream(String s) {
