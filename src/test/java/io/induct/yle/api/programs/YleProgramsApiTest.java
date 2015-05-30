@@ -2,8 +2,10 @@ package io.induct.yle.api.programs;
 
 import io.induct.rest.ApiResponse;
 import io.induct.yle.YleApiTestingBase;
+import io.induct.yle.api.YleId;
 import io.induct.yle.api.programs.model.Item;
 import io.induct.yle.api.programs.model.items.Service;
+import io.induct.yle.api.programs.model.search.ItemSearch;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,8 +16,6 @@ import java.util.List;
  */
 public class YleProgramsApiTest extends YleApiTestingBase {
 
-    private static final String TEST_PROGRAMS_ID = "testFeature";
-
     private YleProgramsApi programsApi;
 
     @Before
@@ -25,7 +25,15 @@ public class YleProgramsApiTest extends YleApiTestingBase {
 
     @Test
     public void shouldListProgramItems() throws Exception {
-        ApiResponse<List<Item>> itemsResponse = programsApi.search();
+        ItemSearch itemSearch = ItemSearch.builder()
+                .byIds(new YleId("2-22"))
+                .byIds("asdasd")
+                .ofType(ItemSearch.Type.TV_CONTENT)
+                .withKeyword("muumi")
+                //.mediaObject(MediaObject.VIDEO)
+                //.inCategory() TODO: category support can be added only once the get categories API is supported
+                .build();
+        ApiResponse<List<Item>> itemsResponse = programsApi.search(itemSearch);
         for (Item item : itemsResponse.getData()) {
             System.out.println("item = " + item.getClass());
         }

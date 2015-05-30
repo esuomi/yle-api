@@ -10,6 +10,7 @@ import io.induct.rest.RequestBuilder;
 import io.induct.yle.api.common.Infrastructure;
 import io.induct.yle.api.programs.model.Item;
 import io.induct.yle.api.programs.model.items.Service;
+import io.induct.yle.api.programs.model.search.ItemSearch;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -54,7 +55,7 @@ public class YleProgramsApi {
         return daniel.deserialize(listOfServices, response.getResponseBody().get());
     }
 
-    public ApiResponse<List<Item>> search() {
+    public ApiResponse<List<Item>> search(ItemSearch build) {
         Request request = createRequestBuilder()
                 .withPath("/v1/programs/items.json")
                 .build();
