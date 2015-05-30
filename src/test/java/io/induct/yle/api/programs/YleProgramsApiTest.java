@@ -3,7 +3,7 @@ package io.induct.yle.api.programs;
 import io.induct.rest.ApiResponse;
 import io.induct.yle.YleApiTestingBase;
 import io.induct.yle.api.programs.model.Item;
-import io.induct.yle.api.programs.model.Service;
+import io.induct.yle.api.programs.model.items.Service;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,14 +26,16 @@ public class YleProgramsApiTest extends YleApiTestingBase {
     @Test
     public void shouldListProgramItems() throws Exception {
         ApiResponse<List<Item>> itemsResponse = programsApi.listItems();
-        List<Item> items = itemsResponse.getBody();
+        for (Item item : itemsResponse.getData()) {
+            System.out.println("item = " + item.getClass());
+        }
     }
 
     @Test
     public void shouldListServices() throws Exception {
         int limit = 10;
         int offset = 0;
-        List<Service> services = programsApi.listServices(Service.Type.TV_CHANNEL, limit, offset).getBody();
+        ApiResponse<List<Service>> services = programsApi.listServices(Service.Type.TV_CHANNEL, limit, offset);
     }
 
 }

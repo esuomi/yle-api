@@ -1,7 +1,10 @@
 package io.induct.rest;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.induct.http.Response;
 
+import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -10,20 +13,29 @@ import java.util.function.Supplier;
  */
 public class ApiResponse<T> {
 
-    private final int statusCode;
-    private final T body;
+    private String apiVersion;
+    private Map<String, Object> meta;
+    private T data;
 
-    public ApiResponse(int statusCode, T body) {
-        this.statusCode = statusCode;
-        this.body = body;
+    @JsonCreator
+    public ApiResponse(@JsonProperty("apiVersion") String apiVersion,
+                       @JsonProperty("meta") Map<String, Object> meta,
+                       @JsonProperty("data") T data) {
+        this.apiVersion = apiVersion;
+        this.meta = meta;
+        this.data = data;
     }
 
-    public int getStatusCode() {
-        return statusCode;
+    public String getApiVersion() {
+        return apiVersion;
     }
 
-    public T getBody() {
-        return body;
+    public Map<String, Object> getMeta() {
+        return meta;
+    }
+
+    public T getData() {
+        return data;
     }
 
     public static class Builder<T> {
@@ -40,7 +52,7 @@ public class ApiResponse<T> {
         }
 
         public ApiResponse<T> build() {
-            return new ApiResponse<>(statusCode, body);
+            return null;//new ApiResponse<>(statusCode, body);
         }
     }
 
