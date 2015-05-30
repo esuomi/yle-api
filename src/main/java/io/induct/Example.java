@@ -2,7 +2,7 @@ package io.induct;
 
 import io.induct.yle.api.YleApi;
 import io.induct.yle.api.YleId;
-import io.induct.yle.api.profiles.Feature;
+import io.induct.yle.api.profiles.model.Feature;
 import io.induct.yle.api.profiles.YleProfilesApi;
 
 /**
