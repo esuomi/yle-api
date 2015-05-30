@@ -7,6 +7,7 @@ import io.induct.rest.ApiResponse;
 import io.induct.rest.Request;
 import io.induct.rest.RequestBuilder;
 import io.induct.yle.api.common.Infrastructure;
+import io.induct.yle.api.programs.model.Item;
 import io.induct.yle.api.programs.model.Service;
 
 import javax.inject.Inject;
@@ -18,9 +19,10 @@ import java.util.List;
  */
 public class YleProgramsApi {
 
-    public static final String PROFILES_BASE_URL = "https://profiles.api.yle.fi";
+    public static final String PROGRAMS_BASE_URL = "https://external.api.yle.fi";
 
     private final TypeReference<List<Service>> listOfServices;
+    private final TypeReference<List<Item>> listOfItems;
 
     private final RateLimiter rateLimiter;
     private final Infrastructure infrastructure;
@@ -31,6 +33,7 @@ public class YleProgramsApi {
                           Infrastructure infrastructure,
                           Daniel daniel) {
         this.listOfServices = new TypeReference<List<Service>>() {};
+        this.listOfItems = new TypeReference<List<Item>>() {};
         this.rateLimiter = rateLimiter;
         this.infrastructure = infrastructure;
         this.daniel = daniel;
@@ -51,7 +54,16 @@ public class YleProgramsApi {
                 response -> daniel.deserializeAll(listOfServices, response.getResponseBody().get()));
     }
 
+    public ApiResponse<List<Item>> listItems() {
+        Request request = createRequestBuilder()
+                .withPath("/v1/programs/items.json")
+                .build();
+        return ApiResponse.map(
+                request::get,
+                response -> daniel.deserializeAll(listOfItems, response.getResponseBody().get()));
+    }
+
     private RequestBuilder createRequestBuilder() {
-        return infrastructure.createRequestBuilder(PROFILES_BASE_URL, rateLimiter);
+        return infrastructure.createRequestBuilder(PROGRAMS_BASE_URL, rateLimiter);
     }
 }
