@@ -25,7 +25,7 @@ public class YleProgramsApiTest extends YleApiTestingBase {
 
     @Test
     public void shouldListProgramItems() throws Exception {
-        ApiResponse<List<Item>> itemsResponse = programsApi.listItems();
+        ApiResponse<List<Item>> itemsResponse = programsApi.search();
         for (Item item : itemsResponse.getData()) {
             System.out.println("item = " + item.getClass());
         }

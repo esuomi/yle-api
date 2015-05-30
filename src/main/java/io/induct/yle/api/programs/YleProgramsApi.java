@@ -54,7 +54,7 @@ public class YleProgramsApi {
         return daniel.deserialize(listOfServices, response.getResponseBody().get());
     }
 
-    public ApiResponse<List<Item>> listItems() {
+    public ApiResponse<List<Item>> search() {
         Request request = createRequestBuilder()
                 .withPath("/v1/programs/items.json")
                 .build();
