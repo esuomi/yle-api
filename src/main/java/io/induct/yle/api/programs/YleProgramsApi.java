@@ -43,7 +43,7 @@ public class YleProgramsApi {
 
     public ApiResponse<List<Service>> listServices(Service.Type type, int limit, int offset) {
         Request request = createRequestBuilder()
-                .withPath("/v1/services.json")
+                .withPath("/v1/programs/services.json")
                 .withParams(params -> {
                     params.put("type", type.value());
                     params.put("limit", Integer.toString(limit));

@@ -1,6 +1,6 @@
 package io.induct.yle.api;
 
-import io.induct.yle.api.profiles.YleProfilesApi;
+import io.induct.yle.api.programs.YleProgramsApi;
 
 import javax.inject.Inject;
 
@@ -9,14 +9,14 @@ import javax.inject.Inject;
  */
 public class YleApi {
 
-    private final YleProfilesApi profilesApi;
+    private final YleProgramsApi programsApi;
 
     @Inject
-    public YleApi(YleProfilesApi profilesApi) {
-        this.profilesApi = profilesApi;
+    public YleApi(YleProgramsApi programsApi) {
+        this.programsApi = programsApi;
     }
 
-    public YleProfilesApi profiles() {
-        return profilesApi;
+    public YleProgramsApi programs() {
+        return programsApi;
     }
 }
