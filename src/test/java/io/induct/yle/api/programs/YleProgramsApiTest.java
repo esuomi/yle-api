@@ -2,7 +2,8 @@ package io.induct.yle.api.programs;
 
 import io.induct.rest.ApiResponse;
 import io.induct.yle.YleApiTestingBase;
-import io.induct.yle.api.YleId;
+import io.induct.yle.api.common.Language;
+import io.induct.yle.api.common.MediaObject;
 import io.induct.yle.api.programs.model.Item;
 import io.induct.yle.api.programs.model.items.Service;
 import io.induct.yle.api.programs.model.search.ItemSearch;
@@ -10,6 +11,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
  * @since 2015-05-09
@@ -26,17 +30,15 @@ public class YleProgramsApiTest extends YleApiTestingBase {
     @Test
     public void shouldListProgramItems() throws Exception {
         ItemSearch itemSearch = ItemSearch.builder()
-                .byIds(new YleId("2-22"))
-                .byIds("asdasd")
                 .ofType(ItemSearch.Type.TV_CONTENT)
                 .withKeyword("muumi")
-                //.mediaObject(MediaObject.VIDEO)
+                .returnOnly(MediaObject.VIDEO)
                 //.inCategory() TODO: category support can be added only once the get categories API is supported
+                .isDownloadable(false)
+                .inLanguage(Language.FINNISH)
                 .build();
         ApiResponse<List<Item>> itemsResponse = programsApi.search(itemSearch);
-        for (Item item : itemsResponse.getData()) {
-            System.out.println("item = " + item.getClass());
-        }
+        assertThat(itemsResponse.getData().isEmpty(), is(false));
     }
 
     @Test
