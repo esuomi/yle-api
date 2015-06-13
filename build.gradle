@@ -14,9 +14,8 @@ repositories {
 }
 
 dependencies {
-    compile(group:'io.induct', name:'daniel', version:'0.1+')
-    compile(group:'io.induct.http', name:'http-ning', version:'0.1+')
-    compile(group:'io.induct.bricks', name:'bricks-ddd', version:'0.1+')
-    compile(group:'com.google.inject', name:'guice', version:'4.0+')
-    compile(group:'com.google.inject.extensions', name:'guice-multibindings', version:'4.0+')
+    compile(group:'io.induct', name:'daniel', version:'0.1.0')
+    compile(group:'io.induct.http', name:'http-ning', version:'0.1.0')
+    compile(group:'io.induct.bricks', name:'bricks-ddd', version:'0.1.0')
+    compile(group:'com.google.inject.extensions', name:'guice-multibindings', version:'4.0')
 }
