@@ -8,6 +8,8 @@ import io.induct.rest.ApiResponse;
 import io.induct.rest.Request;
 import io.induct.rest.RequestBuilder;
 import io.induct.yle.api.common.Infrastructure;
+import io.induct.yle.api.common.Language;
+import io.induct.yle.api.programs.model.CuratedList;
 import io.induct.yle.api.programs.model.Item;
 import io.induct.yle.api.programs.model.items.Service;
 import io.induct.yle.api.programs.model.search.ItemSearch;
@@ -25,6 +27,7 @@ public class YleProgramsApi {
 
     private final TypeReference<ApiResponse<List<Service>>> listOfServices;
     private final TypeReference<ApiResponse<List<Item>>> listOfItems;
+    private final TypeReference<ApiResponse<List<CuratedList>>> listOfCuratedLists;
 
     private final RateLimiter rateLimiter;
     private final Infrastructure infrastructure;
@@ -38,6 +41,7 @@ public class YleProgramsApi {
         this.programsBaseUrl = programsBaseUrl;
         this.listOfServices = new TypeReference<ApiResponse<List<Service>>>() {};
         this.listOfItems = new TypeReference<ApiResponse<List<Item>>>() {};
+        this.listOfCuratedLists = new TypeReference<ApiResponse<List<CuratedList>>>() {};
         this.rateLimiter = rateLimiter;
         this.infrastructure = infrastructure;
         this.daniel = daniel;
@@ -68,6 +72,21 @@ public class YleProgramsApi {
         Response response = request.get();
         ApiResponse<List<Item>> stuff = daniel.deserialize(listOfItems, response.getResponseBody().get());
         return stuff;
+    }
+
+    public ApiResponse<List<CuratedList>> listCuratedLists(Language language, CuratedList.Type type, int limit, int offset) {
+        Request request = createRequestBuilder()
+                .withPath("/v1/programs/lists.json")
+                .withParams(params -> {
+                    params.put("language", language.getLanguageCode());
+                    params.put("type", type.value());
+                    params.put("limit", Integer.toString(limit));
+                    params.put("offset", Integer.toString(offset));
+                })
+                .build();
+
+        Response response = request.get();
+        return daniel.deserialize(listOfCuratedLists, response.getResponseBody().get());
     }
 
     private RequestBuilder createRequestBuilder() {

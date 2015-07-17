@@ -6,6 +6,7 @@ import io.induct.yle.PropertiesConfigModule;
 import io.induct.yle.YleApiTestingBase;
 import io.induct.yle.api.common.Language;
 import io.induct.yle.api.common.MediaObject;
+import io.induct.yle.api.programs.model.CuratedList;
 import io.induct.yle.api.programs.model.Item;
 import io.induct.yle.api.programs.model.items.Service;
 import io.induct.yle.api.programs.model.search.ItemSearch;
@@ -55,4 +56,11 @@ public class YleProgramsApiTest extends YleApiTestingBase {
         ApiResponse<List<Service>> services = programsApi.listServices(Service.Type.TV_CHANNEL, limit, offset);
     }
 
+    @Test
+    public void shouldListCuratedLists() throws Exception {
+        int limit = 10;
+        int offset = 0;
+        ApiResponse<List<CuratedList>> curatedLists = programsApi.listCuratedLists(Language.FINNISH, CuratedList.Type.RADIO_CONTENT, limit, offset);
+        System.out.println("curatedLists = " + curatedLists);
+    }
 }

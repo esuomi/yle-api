@@ -1,5 +1,6 @@
 package io.induct.yle.api;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableMap;
 import io.induct.domain.Identifiable;
 
@@ -71,5 +72,23 @@ public class YleId implements Identifiable<String> {
     @Override
     public boolean isIdentified() {
         return !type.equals(Type.UNKNOWN);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(type, identity);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final YleId other = (YleId) obj;
+        return Objects.equal(this.type, other.type)
+                && Objects.equal(this.identity, other.identity);
     }
 }
