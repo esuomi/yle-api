@@ -1,15 +1,21 @@
 package io.induct.yle.api.programs;
 
+import io.induct.daniel.DanielModule;
 import io.induct.rest.ApiResponse;
+import io.induct.yle.PropertiesConfigModule;
 import io.induct.yle.YleApiTestingBase;
 import io.induct.yle.api.common.Language;
 import io.induct.yle.api.common.MediaObject;
 import io.induct.yle.api.programs.model.Item;
 import io.induct.yle.api.programs.model.items.Service;
 import io.induct.yle.api.programs.model.search.ItemSearch;
-import org.junit.Before;
+import io.induct.yle.ioc.YleApiModule;
+import org.jukito.JukitoRunner;
+import org.jukito.UseModules;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+import javax.inject.Inject;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -18,14 +24,15 @@ import static org.junit.Assert.assertThat;
 /**
  * @since 2015-05-09
  */
+@RunWith(JukitoRunner.class)
+@UseModules({
+        PropertiesConfigModule.class,
+        DanielModule.class,
+        YleApiModule.class
+})
 public class YleProgramsApiTest extends YleApiTestingBase {
 
-    private YleProgramsApi programsApi;
-
-    @Before
-    public void setUp() throws Exception {
-        programsApi = injector.getInstance(YleProgramsApi.class);
-    }
+    @Inject YleProgramsApi programsApi;
 
     @Test
     public void shouldListProgramItems() throws Exception {

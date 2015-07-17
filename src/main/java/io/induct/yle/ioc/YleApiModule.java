@@ -30,7 +30,7 @@ public class YleApiModule extends AbstractModule {
         bind(HttpClient.class).toInstance(new NingHttpClient(new AsyncHttpClient()));
         bind(YleApi.class);
 
-        SimpleModule yleApiCustomDeserializers = new SimpleModule("YleApiEntityDeserializers", new Version(1, 0, 0, null, "io.induct", "yleapi"));
+        SimpleModule yleApiCustomDeserializers = new SimpleModule("YleApiEntityDeserializers", new Version(0, 1, 0, null, "io.induct", "yle-api"));
         yleApiCustomDeserializers.addDeserializer(YleId.class, new JsonDeserializer<YleId>() {
             @Override
             public YleId deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
