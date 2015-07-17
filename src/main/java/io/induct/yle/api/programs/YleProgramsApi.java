@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class YleProgramsApi {
 
-    public static final String PROGRAMS_BASE_URL = "https://external.api.yle.fi";
+    private final String programsBaseUrl;
 
     private final TypeReference<ApiResponse<List<Service>>> listOfServices;
     private final TypeReference<ApiResponse<List<Item>>> listOfItems;
@@ -31,9 +31,11 @@ public class YleProgramsApi {
     private final Daniel daniel;
 
     @Inject
-    public YleProgramsApi(@Named("yle.api.rateLimit") RateLimiter rateLimiter,
+    public YleProgramsApi(@Named("yle.api.baseUrl") String programsBaseUrl,
+                          @Named("yle.api.rateLimit") RateLimiter rateLimiter,
                           Infrastructure infrastructure,
                           Daniel daniel) {
+        this.programsBaseUrl = programsBaseUrl;
         this.listOfServices = new TypeReference<ApiResponse<List<Service>>>() {};
         this.listOfItems = new TypeReference<ApiResponse<List<Item>>>() {};
         this.rateLimiter = rateLimiter;
@@ -69,6 +71,6 @@ public class YleProgramsApi {
     }
 
     private RequestBuilder createRequestBuilder() {
-        return infrastructure.createRequestBuilder(PROGRAMS_BASE_URL, rateLimiter);
+        return infrastructure.createRequestBuilder(programsBaseUrl, rateLimiter);
     }
 }
