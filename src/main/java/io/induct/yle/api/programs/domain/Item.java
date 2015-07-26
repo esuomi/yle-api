@@ -1,13 +1,13 @@
-package io.induct.yle.api.programs.model;
+package io.induct.yle.api.programs.domain;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import io.induct.domain.Entity;
 import io.induct.yle.api.YleId;
-import io.induct.yle.api.programs.model.items.GenericItem;
-import io.induct.yle.api.programs.model.items.RadioProgram;
-import io.induct.yle.api.programs.model.items.TvClip;
-import io.induct.yle.api.programs.model.items.TvProgram;
+import io.induct.yle.api.programs.domain.items.GenericItem;
+import io.induct.yle.api.programs.domain.items.RadioProgram;
+import io.induct.yle.api.programs.domain.items.TvClip;
+import io.induct.yle.api.programs.domain.items.TvProgram;
 
 /**
  * @since 2015-05-30

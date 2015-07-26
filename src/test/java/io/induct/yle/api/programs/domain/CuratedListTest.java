@@ -1,4 +1,4 @@
-package io.induct.yle.api.programs.model;
+package io.induct.yle.api.programs.domain;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.google.common.collect.ImmutableMap;
