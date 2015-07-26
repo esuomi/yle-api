@@ -2,8 +2,8 @@ package io.induct.yle.api.common;
 
 import com.google.common.util.concurrent.RateLimiter;
 import io.induct.http.HttpClient;
-import io.induct.rest.DefaultRequestBuilder;
-import io.induct.rest.RequestBuilder;
+import io.induct.rest.RestRequest;
+import io.induct.rest.RestRequestBuilder;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -26,8 +26,8 @@ public class Infrastructure {
         this.appKey = appKey;
     }
 
-    public RequestBuilder createRequestBuilder(String baseUrl, RateLimiter rateLimiter) {
-        return new RateLimitingRequestBuilder(rateLimiter, new DefaultRequestBuilder(httpClient)
+    public RestRequestBuilder createRequestBuilder(String baseUrl, RateLimiter rateLimiter) {
+        return new RateLimitingRestRequest.Builder(rateLimiter, new RestRequest.Builder(httpClient)
                 .withBaseUrl(baseUrl)
                 .withParams(params -> {
                     params.put("app_id", appId);

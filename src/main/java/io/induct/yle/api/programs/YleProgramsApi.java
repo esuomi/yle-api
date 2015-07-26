@@ -5,8 +5,8 @@ import com.google.common.util.concurrent.RateLimiter;
 import io.induct.daniel.Daniel;
 import io.induct.http.Response;
 import io.induct.rest.ApiResponse;
-import io.induct.rest.Request;
-import io.induct.rest.RequestBuilder;
+import io.induct.rest.RestRequest;
+import io.induct.rest.RestRequestBuilder;
 import io.induct.yle.api.common.Infrastructure;
 import io.induct.yle.api.common.Language;
 import io.induct.yle.api.programs.domain.CuratedList;
@@ -48,7 +48,7 @@ public class YleProgramsApi {
     }
 
     public ApiResponse<List<Service>> listServices(Service.Type type, int limit, int offset) {
-        Request request = createRequestBuilder()
+        RestRequest restRequest = createRequestBuilder()
                 .withPath("/v1/programs/services.json")
                 .withParams(params -> {
                     params.put("type", type.value());
@@ -57,25 +57,25 @@ public class YleProgramsApi {
                 })
                 .build();
 
-        Response response = request.get();
+        Response response = restRequest.get();
         return daniel.deserialize(listOfServices, response.getResponseBody().get());
     }
 
     public ApiResponse<List<Item>> search(ItemSearch search) {
-        Request request = createRequestBuilder()
+        RestRequest restRequest = createRequestBuilder()
                 .withPath("/v1/programs/items.json")
                 .withParams(params -> {
                     params.putAll(search.getParams());
                 })
                 .build();
 
-        Response response = request.get();
+        Response response = restRequest.get();
         ApiResponse<List<Item>> stuff = daniel.deserialize(listOfItems, response.getResponseBody().get());
         return stuff;
     }
 
     public ApiResponse<List<CuratedList>> listCuratedLists(Language language, CuratedList.Type type, int limit, int offset) {
-        Request request = createRequestBuilder()
+        RestRequest restRequest = createRequestBuilder()
                 .withPath("/v1/programs/lists.json")
                 .withParams(params -> {
                     params.put("language", language.getLanguageCode());
@@ -85,11 +85,11 @@ public class YleProgramsApi {
                 })
                 .build();
 
-        Response response = request.get();
+        Response response = restRequest.get();
         return daniel.deserialize(listOfCuratedLists, response.getResponseBody().get());
     }
 
-    private RequestBuilder createRequestBuilder() {
+    private RestRequestBuilder createRequestBuilder() {
         return infrastructure.createRequestBuilder(programsBaseUrl, rateLimiter);
     }
 }
