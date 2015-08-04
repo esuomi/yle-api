@@ -1,4 +1,4 @@
-package io.induct.yle.api.programs.model.items;
+package io.induct.yle.api.programs.domain.items;
 
 /**
  * @since 2015-05-30

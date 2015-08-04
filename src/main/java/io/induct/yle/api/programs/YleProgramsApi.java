@@ -9,10 +9,10 @@ import io.induct.rest.Request;
 import io.induct.rest.RequestBuilder;
 import io.induct.yle.api.common.Infrastructure;
 import io.induct.yle.api.common.Language;
-import io.induct.yle.api.programs.model.CuratedList;
-import io.induct.yle.api.programs.model.Item;
-import io.induct.yle.api.programs.model.items.Service;
-import io.induct.yle.api.programs.model.search.ItemSearch;
+import io.induct.yle.api.programs.domain.CuratedList;
+import io.induct.yle.api.programs.domain.Item;
+import io.induct.yle.api.programs.domain.items.Service;
+import io.induct.yle.api.programs.domain.search.ItemSearch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

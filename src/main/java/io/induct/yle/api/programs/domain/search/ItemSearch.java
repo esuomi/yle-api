@@ -1,4 +1,4 @@
-package io.induct.yle.api.programs.model.search;
+package io.induct.yle.api.programs.domain.search;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
