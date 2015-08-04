@@ -12,9 +12,6 @@ import com.google.common.util.concurrent.RateLimiter;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.multibindings.Multibinder;
-import com.ning.http.client.AsyncHttpClient;
-import io.induct.http.HttpClient;
-import io.induct.http.ning.NingHttpClient;
 import io.induct.yle.api.YleApi;
 import io.induct.yle.api.YleId;
 import io.induct.yle.api.common.Language;
@@ -31,7 +28,6 @@ import java.util.Map;
 public class YleApiModule extends AbstractModule {
     @Override
     protected void configure() {
-        bind(HttpClient.class).toInstance(new NingHttpClient(new AsyncHttpClient()));
         bind(YleApi.class);
 
         SimpleModule yleApiCustomDeserializers = new SimpleModule("YleApiEntityDeserializers", new Version(1, 0, 0, null, "io.induct", "yleapi"));
