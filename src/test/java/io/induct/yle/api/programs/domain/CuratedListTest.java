@@ -2,7 +2,6 @@ package io.induct.yle.api.programs.domain;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.io.Resources;
 import io.induct.daniel.Daniel;
 import io.induct.rest.ApiResponse;
 import io.induct.yle.YleApiTestingBase;
@@ -35,7 +34,7 @@ public class CuratedListTest extends YleApiTestingBase {
     public void shouldDeserializeFromExampleApiResponseFromDeocumentation() throws Exception {
         ApiResponse<List<CuratedList>> curatedLists = daniel.deserialize(
                 listOfCuratedLists,
-                Resources.getResource("CuratedListResponse.json").openStream());
+                resource("api/v1/programs/lists.json").get());
 
         assertThat(curatedLists.getData().size(), equalTo(38));
         CuratedList curatedList = curatedLists.getData().get(0);
