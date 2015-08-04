@@ -1,16 +1,10 @@
 package io.induct.rest;
 
 import io.induct.daniel.Daniel;
-import io.induct.daniel.DanielModule;
-import io.induct.yle.PropertiesConfigModule;
 import io.induct.yle.YleApiTestingBase;
-import io.induct.yle.ioc.YleApiModule;
-import org.jukito.JukitoRunner;
-import org.jukito.UseModules;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
-import javax.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.util.Map;
 
@@ -20,17 +14,15 @@ import static org.junit.Assert.assertNotNull;
 /**
  * @since 2015-05-30
  */
-@RunWith(JukitoRunner.class)
-@UseModules({
-        PropertiesConfigModule.class,
-        DanielModule.class,
-        YleApiModule.class
-})
 public class ApiResponseTest extends YleApiTestingBase {
 
-    @Inject Daniel daniel;
-
+    private Daniel daniel;
     private Class<ApiResponse> responseType = ApiResponse.class;
+
+    @Before
+    public void setUp() throws Exception {
+        daniel = injector.getInstance(Daniel.class);
+    }
 
     private static String API_RESPONSE_ROOT_EXAMPLE =
             "{\n"+
