@@ -28,7 +28,7 @@ public class TestDependenciesModule extends AbstractModule {
         bind(HttpClient.class).toInstance(httpClient);
 
         bind(String.class).annotatedWith(Names.named("yle.api.baseUrl")).toInstance(TESTING_BASE_URL);
-        bind(String.class).annotatedWith(Names.named("yle.api.rateLimit=10")).toInstance(TESTING_RATE_LIMIT);
+        bind(String.class).annotatedWith(Names.named("yle.api.rateLimit")).toInstance(TESTING_RATE_LIMIT);
         bind(String.class).annotatedWith(Names.named("yle.api.appId")).toInstance(TESTING_APP_ID);
         bind(String.class).annotatedWith(Names.named("yle.api.appKey")).toInstance(TESTING_APP_KEY);
         bind(String.class).annotatedWith(Names.named("yle.api.streamKey")).toInstance(TESTING_STREAM_KEY);

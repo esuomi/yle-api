@@ -13,15 +13,21 @@ import io.induct.yle.api.programs.model.CuratedList;
 import io.induct.yle.api.programs.model.Item;
 import io.induct.yle.api.programs.model.items.Service;
 import io.induct.yle.api.programs.model.search.ItemSearch;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @since 2015-05-30
  */
 public class YleProgramsApi {
+
+    private final Logger log = LoggerFactory.getLogger(YleProgramsApi.class);
 
     public static final String PROGRAMS_BASE_URL = "https://external.api.yle.fi";
 
@@ -67,9 +73,29 @@ public class YleProgramsApi {
                 })
                 .build();
 
+        logRequest(request);
         Response response = request.get();
         ApiResponse<List<Item>> stuff = daniel.deserialize(listOfItems, response.getResponseBody().get());
         return stuff;
+    }
+
+    private void logRequest(Request request) {
+        if (log.isDebugEnabled()) {
+            StringBuilder url = new StringBuilder(request.getUrl());
+            boolean first = true;
+            for (Map.Entry<String, Collection<String>> param : request.getParams().asMap().entrySet()) {
+                if (first) {
+                    url.append("?");
+                    first = false;
+                } else {
+                    url.append("&");
+                }
+                for (String value : param.getValue()) {
+                    url.append(param.getKey()).append("=").append(value);
+                }
+            }
+            log.debug("Calling " + url.toString());
+        }
     }
 
     public ApiResponse<List<CuratedList>> listCuratedLists(Language language, CuratedList.Type type, int limit, int offset) {
