@@ -8,6 +8,7 @@ import io.induct.yle.api.programs.domain.items.GenericItem;
 import io.induct.yle.api.programs.domain.items.RadioProgram;
 import io.induct.yle.api.programs.domain.items.TvClip;
 import io.induct.yle.api.programs.domain.items.TvProgram;
+import lombok.EqualsAndHashCode;
 
 /**
  * @since 2015-05-30
@@ -23,17 +24,10 @@ import io.induct.yle.api.programs.domain.items.TvProgram;
         @JsonSubTypes.Type(value = TvProgram.class, name = "TVProgram"),
         @JsonSubTypes.Type(value = TvClip.class, name = "TVClip")
 })
+@EqualsAndHashCode(callSuper = true)
 public abstract class Item extends Entity<YleId> {
 
-    private final String type;
-
-    public Item(YleId identity,
-                String type) {
+    public Item(YleId identity) {
         super(identity, YleId.UNIDENTIFIED);
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
     }
 }

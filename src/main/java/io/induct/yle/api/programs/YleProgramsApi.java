@@ -7,6 +7,7 @@ import io.induct.http.Response;
 import io.induct.rest.ApiResponse;
 import io.induct.rest.Request;
 import io.induct.rest.RequestBuilder;
+import io.induct.yle.api.YleId;
 import io.induct.yle.api.common.Infrastructure;
 import io.induct.yle.api.common.Language;
 import io.induct.yle.api.programs.domain.CuratedList;
@@ -33,6 +34,7 @@ public class YleProgramsApi {
 
     private final TypeReference<ApiResponse<List<Service>>> listOfServices;
     private final TypeReference<ApiResponse<List<Item>>> listOfItems;
+    private final TypeReference<ApiResponse<Item>> singleItem;
     private final TypeReference<ApiResponse<List<CuratedList>>> listOfCuratedLists;
 
     private final RateLimiter rateLimiter;
@@ -45,6 +47,7 @@ public class YleProgramsApi {
                           Daniel daniel) {
         this.listOfServices = new TypeReference<ApiResponse<List<Service>>>() {};
         this.listOfItems = new TypeReference<ApiResponse<List<Item>>>() {};
+        this.singleItem = new TypeReference<ApiResponse<Item>>() {};
         this.listOfCuratedLists = new TypeReference<ApiResponse<List<CuratedList>>>() {};
         this.rateLimiter = rateLimiter;
         this.infrastructure = infrastructure;
@@ -74,9 +77,42 @@ public class YleProgramsApi {
                 .build();
 
         logRequest(request);
+
         Response response = request.get();
         ApiResponse<List<Item>> stuff = daniel.deserialize(listOfItems, response.getResponseBody().get());
         return stuff;
+    }
+
+    public ApiResponse<List<CuratedList>> listCuratedLists(Language language, CuratedList.Type type, int limit, int offset) {
+        Request request = createRequestBuilder()
+                .withPath("/v1/programs/lists.json")
+                .withParams(params -> {
+                    params.put("language", language.getLanguageCode());
+                    params.put("type", type.value());
+                    params.put("limit", Integer.toString(limit));
+                    params.put("offset", Integer.toString(offset));
+                })
+                .build();
+
+        logRequest(request);
+
+        Response response = request.get();
+        return daniel.deserialize(listOfCuratedLists, response.getResponseBody().get());
+    }
+
+    public ApiResponse<Item> getItem(YleId yleId) {
+        Request request = createRequestBuilder()
+                .withPath("/v1/programs/items/" + yleId.identity() + ".json")
+                .build();
+
+        logRequest(request);
+
+        Response response = request.get();
+        return daniel.deserialize(singleItem, response.getResponseBody().get());
+    }
+
+    private RequestBuilder createRequestBuilder() {
+        return infrastructure.createRequestBuilder(PROGRAMS_BASE_URL, rateLimiter);
     }
 
     private void logRequest(Request request) {
@@ -96,24 +132,5 @@ public class YleProgramsApi {
             }
             log.debug("Calling " + url.toString());
         }
-    }
-
-    public ApiResponse<List<CuratedList>> listCuratedLists(Language language, CuratedList.Type type, int limit, int offset) {
-        Request request = createRequestBuilder()
-                .withPath("/v1/programs/lists.json")
-                .withParams(params -> {
-                    params.put("language", language.getLanguageCode());
-                    params.put("type", type.value());
-                    params.put("limit", Integer.toString(limit));
-                    params.put("offset", Integer.toString(offset));
-                })
-                .build();
-
-        Response response = request.get();
-        return daniel.deserialize(listOfCuratedLists, response.getResponseBody().get());
-    }
-
-    private RequestBuilder createRequestBuilder() {
-        return infrastructure.createRequestBuilder(PROGRAMS_BASE_URL, rateLimiter);
     }
 }

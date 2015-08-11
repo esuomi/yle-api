@@ -10,8 +10,7 @@ import io.induct.yle.api.programs.domain.Item;
  */
 public class TvClip extends Item {
     @JsonCreator
-    public TvClip(@JsonProperty("id") YleId identity,
-                  @JsonProperty("type") String type) {
-        super(identity, type);
+    public TvClip(@JsonProperty("id") YleId identity) {
+        super(identity);
     }
 }

@@ -31,7 +31,7 @@ public class CuratedListTest extends YleApiTestingBase {
     private final TypeReference<ApiResponse<List<CuratedList>>> listOfCuratedLists = new TypeReference<ApiResponse<List<CuratedList>>>() {};
 
     @Test
-    public void shouldDeserializeFromExampleApiResponseFromDeocumentation() throws Exception {
+    public void shouldDeserializeFromExampleApiResponse() throws Exception {
         ApiResponse<List<CuratedList>> curatedLists = daniel.deserialize(
                 listOfCuratedLists,
                 resource("api/v1/programs/lists.json").get());

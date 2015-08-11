@@ -2,6 +2,7 @@ package io.induct.rest;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.induct.yle.api.common.Language;
 
 import java.util.Map;
 
@@ -13,6 +14,7 @@ public class ApiResponse<T> {
     private String apiVersion;
     private Map<String, Object> meta;
     private T data;
+    private Map<Language, String> descriptions;
 
     @JsonCreator
     public ApiResponse(@JsonProperty("apiVersion") String apiVersion,
@@ -34,5 +36,4 @@ public class ApiResponse<T> {
     public T getData() {
         return data;
     }
-
 }

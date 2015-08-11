@@ -11,8 +11,7 @@ import io.induct.yle.api.programs.domain.Item;
 public class RadioProgram extends Item {
 
     @JsonCreator
-    public RadioProgram(@JsonProperty("id") YleId identity,
-                        @JsonProperty("type") String type) {
-        super(identity, type);
+    public RadioProgram(@JsonProperty("id") YleId identity) {
+        super(identity);
     }
 }

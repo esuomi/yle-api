@@ -17,7 +17,7 @@ public class GenericItem extends Item {
     @JsonCreator
     public GenericItem(@JsonProperty("id") YleId identity,
                        @JsonProperty("type") String type) {
-        super(identity, type);
+        super(identity);
         log.warn("Unknown type '{}' mapped to GenericItem; library needs to be updated for support", type);
     }
 }

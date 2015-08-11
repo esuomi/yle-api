@@ -1,0 +1,449 @@
+{
+  "apiVersion": "1.0.1382",
+  "meta": {
+	"id": "1-2048985"
+  },
+  "data": {
+	"description": {
+	  "fi": "Kausi 5, 9/13. Kiinalainen kanuuna. Lovejoy ja Charlotte joutuvat vaaraan vanhan \"kukkaruukun\" takia.",
+	  "sv": "Kinesisk kanon. Lovejoy och Charlotte råkar i fara pga en gammal \"blomkruka\". Stereo. Repris."
+	},
+	"video": {
+	  "language": [],
+	  "format": [
+		{
+		  "inScheme": "mediaformat-classification",
+		  "type": "Concept",
+		  "key": "4:3"
+		}
+	  ],
+	  "type": "VideoTrack"
+	},
+	"typeMedia": "TVContent",
+	"creator": [
+	  {
+		"name": "Fremantle International Television",
+		"type": "Organization"
+	  }
+	],
+	"partOfSeason": {
+	  "description": {
+		"fi": "Antiikkikauppias Lovejoyta ei jymäytetä. Alalla liikkuu raha, ja se houkuttaa mukaan vilunkiväkeä, mutta mies kyllä tunnistaa aidon aarteen tusinatavarasta. Ja minne hän ei ehdi itse, sinne tulevat ystävät avuksi."
+	  },
+	  "seasonNumber": 1,
+	  "creator": [
+		{
+		  "name": "Fremantle International Television",
+		  "type": "Organization"
+		}
+	  ],
+	  "partOfSeries": {
+		"id": "1-2660452"
+	  },
+	  "indexDataModified": "2015-06-17T15:32:35.197+03:00",
+	  "type": "TVSeason",
+	  "title": {
+		"fi": "Lovejoy",
+		"sv": "Lovejoy"
+	  },
+	  "countryOfOrigin": [
+		"Britannia"
+	  ],
+	  "id": "1-2664234",
+	  "subject": [
+		{
+		  "id": "5-134",
+		  "title": {
+			"fi": "Ulkomaiset sarjat",
+			"sv": "Utländska serier"
+		  },
+		  "broader": {
+			"id": "5-131"
+		  },
+		  "inScheme": "areena-content-classification",
+		  "type": "Concept",
+		  "key": "ulkomaisetsarjat"
+		},
+		{
+		  "id": "5-262",
+		  "title": {
+			"fi": "Draama"
+		  },
+		  "inScheme": "areena-analytics-classification",
+		  "type": "Concept",
+		  "key": "draama"
+		},
+		{
+		  "id": "21-7",
+		  "title": {
+			"fi": "Ulkomainen fiktio",
+			"en": "Foreign Fiction"
+		  },
+		  "inScheme": "finnpanel-genre-classification",
+		  "type": "Concept",
+		  "notation": [
+			{
+			  "value": "6",
+			  "valueType": "finnpanel-notation"
+			}
+		  ]
+		}
+	  ]
+	},
+	"partOfSeries": {
+	  "description": {
+		"fi": "Antiikkikauppias Lovejoyta ei jymäytetä. Alalla liikkuu raha, ja se houkuttaa mukaan vilunkiväkeä, mutta mies kyllä tunnistaa aidon aarteen tusinatavarasta. Ja minne hän ei ehdi itse, sinne tulevat ystävät avuksi."
+	  },
+	  "creator": [
+		{
+		  "name": "Fremantle International Television",
+		  "type": "Organization"
+		}
+	  ],
+	  "indexDataModified": "2015-06-17T15:32:35.175+03:00",
+	  "type": "TVSeries",
+	  "title": {
+		"fi": "Lovejoy",
+		"sv": "Lovejoy"
+	  },
+	  "coverImage": {
+		"id": "13-1-2660452-cover",
+		"available": true,
+		"type": "ImageObject"
+	  },
+	  "season": [
+		{
+		  "description": {
+			"fi": "Antiikkikauppias Lovejoyta ei jymäytetä. Alalla liikkuu raha, ja se houkuttaa mukaan vilunkiväkeä, mutta mies kyllä tunnistaa aidon aarteen tusinatavarasta. Ja minne hän ei ehdi itse, sinne tulevat ystävät avuksi."
+		  },
+		  "seasonNumber": 1,
+		  "creator": [
+			{
+			  "name": "Fremantle International Television",
+			  "type": "Organization"
+			}
+		  ],
+		  "partOfSeries": {
+			"id": "1-2660452"
+		  },
+		  "indexDataModified": "2015-06-17T15:32:35.197+03:00",
+		  "type": "TVSeason",
+		  "title": {
+			"fi": "Lovejoy",
+			"sv": "Lovejoy"
+		  },
+		  "countryOfOrigin": [
+			"Britannia"
+		  ],
+		  "id": "1-2664234",
+		  "subject": [
+			{
+			  "id": "5-134",
+			  "title": {
+				"fi": "Ulkomaiset sarjat",
+				"sv": "Utländska serier"
+			  },
+			  "broader": {
+				"id": "5-131"
+			  },
+			  "inScheme": "areena-content-classification",
+			  "type": "Concept",
+			  "key": "ulkomaisetsarjat"
+			},
+			{
+			  "id": "5-262",
+			  "title": {
+				"fi": "Draama"
+			  },
+			  "inScheme": "areena-analytics-classification",
+			  "type": "Concept",
+			  "key": "draama"
+			},
+			{
+			  "id": "21-7",
+			  "title": {
+				"fi": "Ulkomainen fiktio",
+				"en": "Foreign Fiction"
+			  },
+			  "inScheme": "finnpanel-genre-classification",
+			  "type": "Concept",
+			  "notation": [
+				{
+				  "value": "6",
+				  "valueType": "finnpanel-notation"
+				}
+			  ]
+			}
+		  ]
+		}
+	  ],
+	  "countryOfOrigin": [
+		"Britannia"
+	  ],
+	  "id": "1-2660452",
+	  "image": {
+		"id": "13-1-2660452",
+		"available": true,
+		"type": "ImageObject"
+	  },
+	  "subject": [
+		{
+		  "id": "5-134",
+		  "title": {
+			"fi": "Ulkomaiset sarjat",
+			"sv": "Utländska serier"
+		  },
+		  "broader": {
+			"id": "5-131"
+		  },
+		  "inScheme": "areena-content-classification",
+		  "type": "Concept",
+		  "key": "ulkomaisetsarjat"
+		},
+		{
+		  "id": "5-262",
+		  "title": {
+			"fi": "Draama"
+		  },
+		  "inScheme": "areena-analytics-classification",
+		  "type": "Concept",
+		  "key": "draama"
+		},
+		{
+		  "id": "21-7",
+		  "title": {
+			"fi": "Ulkomainen fiktio",
+			"en": "Foreign Fiction"
+		  },
+		  "inScheme": "finnpanel-genre-classification",
+		  "type": "Concept",
+		  "notation": [
+			{
+			  "value": "6",
+			  "valueType": "finnpanel-notation"
+			}
+		  ]
+		}
+	  ]
+	},
+	"episodeNumber": 57,
+	"promotionTitle": {
+	  "fi": "Kiinalainen kanuuna saattaa Lovejoyn vaaraan"
+	},
+	"indexDataModified": "2015-08-04T09:20:04.705+03:00",
+	"alternativeId": [
+	  "16-0-0212594"
+	],
+	"type": "TVProgram",
+	"duration": "PT48M57S",
+	"productionId": "43153257000",
+	"contentRating": {
+	  "title": {
+		"fi": "Sallittu yli 7-vuotiaille",
+		"sv": "Förbjudet under 7 år",
+		"en": "Not for persons under 7"
+	  },
+	  "ageRestriction": 7,
+	  "reason": [
+		{
+		  "title": {
+			"fi": "Voi aiheuttaa ahdistusta",
+			"sv": "Kan skapa ångest",
+			"en": "Content may cause anxiety"
+		  },
+		  "type": "ContentRatingReason",
+		  "key": "anxiety"
+		},
+		{
+		  "title": {
+			"fi": "Sisältää väkivaltaa",
+			"sv": "Våldsinslag",
+			"en": "Violent content"
+		  },
+		  "type": "ContentRatingReason",
+		  "key": "violence"
+		}
+	  ],
+	  "ratingSystem": "MEKU",
+	  "type": "ContentRating"
+	},
+	"title": {
+	  "fi": "Lovejoy",
+	  "sv": "Lovejoy"
+	},
+	"itemTitle": {},
+	"countryOfOrigin": [
+	  "Britannia"
+	],
+	"id": "1-2048985",
+	"typeCreative": "Program",
+	"image": {
+	  "id": "13-1-2048985",
+	  "available": true,
+	  "type": "ImageObject"
+	},
+	"audio": [
+	  {
+		"language": [
+		  "en"
+		],
+		"format": [
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "stereo"
+		  }
+		],
+		"type": "AudioTrack"
+	  }
+	],
+	"originalTitle": {
+	  "unknown": "Lovejoy"
+	},
+	"publicationEvent": [
+	  {
+		"service": {
+		  "id": "yle-areena"
+		},
+		"publisher": [
+		  {
+			"id": "yle-areena"
+		  }
+		],
+		"startTime": "2015-08-04T09:00:00+03:00",
+		"temporalStatus": "currently",
+		"endTime": "2015-10-30T23:59:59+02:00",
+		"type": "OnDemandPublication",
+		"duration": "P2M26DT14H59M59S",
+		"region": "Finland",
+		"id": "4-4472094",
+		"media": {
+		  "id": "6-894a7ec0b6b149d68ffb310a169320ce",
+		  "duration": "PT48M57S",
+		  "contentProtection": [
+			{
+			  "id": "22-1",
+			  "type": "ContentProtectionPolicy"
+			}
+		  ],
+		  "available": true,
+		  "type": "VideoObject",
+		  "downloadable": false
+		}
+	  },
+	  {
+		"service": {
+		  "id": "yle-tv1"
+		},
+		"startTime": "2005-01-08T15:10:14+02:00",
+		"temporalStatus": "in-past",
+		"endTime": "2005-01-08T15:59:11+02:00",
+		"type": "ScheduledTransmission",
+		"duration": "PT48M57S",
+		"region": "Finland",
+		"id": "4-4135961",
+		"media": {}
+	  },
+	  {
+		"service": {
+		  "id": "yle-tv1"
+		},
+		"startTime": "2003-10-10T15:05:13+03:00",
+		"temporalStatus": "in-past",
+		"endTime": "2003-10-10T15:54:10+03:00",
+		"type": "ScheduledTransmission",
+		"duration": "PT48M57S",
+		"region": "Finland",
+		"id": "4-4135962",
+		"media": {}
+	  }
+	],
+	"collection": "main",
+	"subject": [
+	  {
+		"id": "5-142",
+		"title": {
+		  "fi": "Huumori",
+		  "sv": "Humor"
+		},
+		"broader": {
+		  "id": "5-139"
+		},
+		"inScheme": "areena-content-classification",
+		"type": "Concept",
+		"key": "huumori"
+	  },
+	  {
+		"id": "5-136",
+		"title": {
+		  "fi": "Komedia",
+		  "sv": "Komedi"
+		},
+		"broader": {
+		  "id": "5-131"
+		},
+		"inScheme": "areena-content-classification",
+		"type": "Concept",
+		"key": "komedia"
+	  },
+	  {
+		"id": "5-131",
+		"title": {
+		  "fi": "Sarjat ja elokuvat",
+		  "sv": "Serier och film"
+		},
+		"broader": {
+		  "id": "5-130"
+		},
+		"inScheme": "areena-content-classification",
+		"type": "Concept",
+		"key": "sarjatjaelokuvat"
+	  },
+	  {
+		"id": "5-134",
+		"title": {
+		  "fi": "Ulkomaiset sarjat",
+		  "sv": "Utländska serier"
+		},
+		"broader": {
+		  "id": "5-131"
+		},
+		"inScheme": "areena-content-classification",
+		"type": "Concept",
+		"key": "ulkomaisetsarjat"
+	  },
+	  {
+		"id": "5-262",
+		"title": {
+		  "fi": "Draama"
+		},
+		"inScheme": "areena-analytics-classification",
+		"type": "Concept",
+		"key": "draama"
+	  },
+	  {
+		"id": "21-7",
+		"title": {
+		  "fi": "Ulkomainen fiktio",
+		  "en": "Foreign Fiction"
+		},
+		"inScheme": "finnpanel-genre-classification",
+		"type": "Concept",
+		"notation": [
+		  {
+			"value": "6",
+			"valueType": "finnpanel-notation"
+		  }
+		]
+	  }
+	],
+	"subtitling": [
+	  {
+		"language": [
+		  "fi"
+		],
+		"type": "Subtitling"
+	  }
+	]
+  }
+}

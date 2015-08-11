@@ -9,6 +9,7 @@ import io.induct.http.testing.StaticResponse;
 import io.induct.rest.ApiResponse;
 import io.induct.yle.TestDependenciesModule;
 import io.induct.yle.YleApiTestingBase;
+import io.induct.yle.api.YleId;
 import io.induct.yle.api.common.Language;
 import io.induct.yle.api.common.MediaObject;
 import io.induct.yle.api.programs.domain.CuratedList;
@@ -22,8 +23,6 @@ import org.mockito.stubbing.OngoingStubbing;
 import java.io.InputStream;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.verify;
@@ -39,6 +38,20 @@ public class YleProgramsApiTest extends YleApiTestingBase {
     @Before
     public void setUp() throws Exception {
         programsApi = injector.getInstance(YleProgramsApi.class);
+    }
+
+    @Test
+    public void shouldGetSingleItem() throws Exception {
+        whenCallingGet("https://external.api.yle.fi/v1/programs/items/1-2048985.json")
+                .thenReturn(new StaticResponse(200, mapOf(), resource("api/v1/programs/items/1-2048985.json")));
+
+        ApiResponse<Item> itemResponse = programsApi.getItem(new YleId("1-2048985"));
+
+        verify(httpClient).get(
+                eq("https://external.api.yle.fi/v1/programs/items/1-2048985.json"),
+                eq(params()),
+                eq(mapOf()),
+                any(InputStream.class));
     }
 
     @Test
@@ -61,9 +74,6 @@ public class YleProgramsApiTest extends YleApiTestingBase {
                 eq(params("q", "muumi", "language", "fi", "type", "tvcontent", "mediaobject", "video")),
                 eq(mapOf()),
                 any(InputStream.class));
-
-
-        assertThat(itemsResponse.getData().isEmpty(), is(false));
     }
 
     @Test
@@ -71,7 +81,7 @@ public class YleProgramsApiTest extends YleApiTestingBase {
         whenCallingGet("https://external.api.yle.fi/v1/programs/services.json")
                 .thenReturn(new StaticResponse(200, mapOf(), resource("api/v1/programs/services.json")));
 
-        programsApi.listServices(Service.Type.TV_CHANNEL, 10, 0);
+        ApiResponse<List<Service>> services = programsApi.listServices(Service.Type.TV_CHANNEL, 10, 0);
 
         verify(httpClient).get(
                 eq("https://external.api.yle.fi/v1/programs/services.json"),
@@ -85,7 +95,7 @@ public class YleProgramsApiTest extends YleApiTestingBase {
         whenCallingGet("https://external.api.yle.fi/v1/programs/lists.json")
                 .thenReturn(new StaticResponse(200, mapOf(), resource("api/v1/programs/lists.json")));
 
-        programsApi.listCuratedLists(Language.FINNISH, CuratedList.Type.RADIO_CONTENT, 10, 0);
+        ApiResponse<List<CuratedList>> curatedLists = programsApi.listCuratedLists(Language.FINNISH, CuratedList.Type.RADIO_CONTENT, 10, 0);
 
         verify(httpClient).get(
                 eq("https://external.api.yle.fi/v1/programs/lists.json"),

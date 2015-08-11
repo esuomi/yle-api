@@ -188,8 +188,8 @@ public class ItemSearch {
         }
 
         public Builder inLanguage(Language language) {
-            if (language != Language.FINNISH && language != Language.SAMI) {
-                throw new IllegalArgumentException("Only Finnish and Sami are supported as item search by language parameter. Was given " + language + " instead");
+            if (language != Language.FINNISH && language != Language.SWEDISH) {
+                throw new IllegalArgumentException("Only Finnish and Swedish are supported as item search by language parameter. Was given " + language + " instead");
             }
             this.language = language;
             return this;
