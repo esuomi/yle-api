@@ -100,6 +100,14 @@ public class TvProgram extends Item {
         this.subtitling = subtitling;
     }
 
+    public String getTitle(Language language) {
+        return titles.get(language);
+    }
+
+    public String getDescription(Language language) {
+        return descriptions.get(language);
+    }
+
     /**
      * @since 2015-08-04
      */

@@ -3,6 +3,7 @@ package io.induct.yle.api;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.io.CharStreams;
 import com.google.common.util.concurrent.RateLimiter;
 import io.induct.daniel.Daniel;
 import io.induct.http.Response;
@@ -19,7 +20,9 @@ import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * <code>StandardizedApi</code> describes all the traits common to all Yle APIs such as error handling.
@@ -56,7 +59,20 @@ public abstract class StandardizedApi {
                     Optional<InputStream> body = response.getResponseBody();
                     if (body.isPresent()) {
                         log.debug("Body is present");
-                        return daniel.deserialize(targetType, response.getResponseBody().get());
+                        if (targetType != null) {
+                            return daniel.deserialize(targetType, response.getResponseBody().get());
+                        } else {
+                            // TODO: This is debugging branch and should not be present in final code!
+                            InputStream resp = response.getResponseBody().get();
+                            String content = null;
+                            try {
+                                content = CharStreams.toString(new InputStreamReader(resp));
+                            } catch (IOException e) {
+                                log.error("Failed to print stream", e);
+                            }
+                            log.info("content: {}", content);
+                            return null;
+                        }
                     } else {
                         log.debug("Body is absent, returning empty ApiResponse");
                         return new ApiResponse<>("unknown", ImmutableMap.of(), null);

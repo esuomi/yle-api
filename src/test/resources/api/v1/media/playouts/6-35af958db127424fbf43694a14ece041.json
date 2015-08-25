@@ -1,0 +1,22 @@
+{
+  "notifications": {},
+  "data": [
+	{
+	  "multibitrate": true,
+	  "height": 396,
+	  "formatOf": "6-35af958db127424fbf43694a14ece041",
+	  "type": "VideoObject",
+	  "protectionType": "DEFAULT",
+	  "url": "CwAArk9txSGpZeJEf1PZV1+b9qt6Q65wtIr5UVINKzvV/GVYtYxGMCYnVkYYVocPWsDrk03trz91cdK9pXMbV5LdWi2/awoXyL64uHaZdeEWvU6fIZfnt1cGIWuHskl673ypyLUQAOJkViqo0D1UjOzthDn4GeupiuhT7mvY0Pjh1BxMZLssYQfjWfiWGshxjAHpZO1yL4fWqRwZcuo0Yd4t/dt0Kou2F/VjICkNtLQbx8vvw9vQe8HLjdp8hG+uo7qgyK2krhU7fIjRAuYgBp8ZEOQ/BsVaWu6MErSaVvc2WkWm1IGQrG08xppAG2BrNQ2nRHXGSOn65p2F86hEokiarINIrGzByVGfLjqL6A9GLE92D4NP2HV8jOKbHn85FRDYcaUXQzfnpk8uufPs69fUh2Cvv0c2MaMfwAoDNWs=",
+	  "subtitles": [],
+	  "protocol": "HLS",
+	  "live": false,
+	  "width": 704
+	}
+  ],
+  "meta": {
+	"id": "6-35af958db127424fbf43694a14ece041"
+  }
+}
+]
+}
