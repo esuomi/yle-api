@@ -1,0 +1,785 @@
+{
+  "apiVersion": "1.0.1382",
+  "meta": {
+	"offset": "0",
+	"limit": "10",
+	"type": "tvchannel",
+	"count": 6
+  },
+  "data": [
+	{
+	  "video": {
+		"format": [
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "SD"
+		  },
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "16:9"
+		  }
+		],
+		"type": "VideoTrack"
+	  },
+	  "typeMedia": "TVContent",
+	  "homepage": {
+		"title": {
+		  "fi": "Kotisivu",
+		  "sv": "Hemsida"
+		},
+		"type": "WebPage",
+		"url": "http://tv1.yle.fi",
+		"serviceProvider": "http://yle.fi"
+	  },
+	  "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+	  "type": "TVChannel",
+	  "title": {
+		"fi": "Yle TV1"
+	  },
+	  "region": "Finland",
+	  "hasFormat": [
+		{
+		  "id": "yle-tv1-hd",
+		  "title": {
+			"fi": "Yle TV1 HD"
+		  },
+		  "audio": [
+			{
+			  "language": [
+				"fi"
+			  ],
+			  "format": [
+				{
+				  "inScheme": "mediaformat-classification",
+				  "type": "Concept",
+				  "key": "dolby-digital-2.0-stereo"
+				}
+			  ],
+			  "type": "AudioTrack"
+			},
+			{
+			  "language": [
+				"fi"
+			  ],
+			  "type": "AudioSubtitling"
+			}
+		  ],
+		  "typeMedia": "TVContent",
+		  "type": "TVChannel",
+		  "subtitling": [
+			{
+			  "language": [
+				"fi"
+			  ],
+			  "type": "Subtitling"
+			}
+		  ],
+		  "typeCreative": "Channel",
+		  "video": {
+			"format": [
+			  {
+				"inScheme": "mediaformat-classification",
+				"type": "Concept",
+				"key": "HD"
+			  },
+			  {
+				"inScheme": "mediaformat-classification",
+				"type": "Concept",
+				"key": "16:9"
+			  }
+			],
+			"type": "VideoTrack"
+		  }
+		}
+	  ],
+	  "programGuide": [
+		{
+		  "title": {
+			"fi": "Ohjelmaopas",
+			"sv": "Programguide"
+		  },
+		  "type": "WebPage",
+		  "serviceProvider": "http://yle.fi",
+		  "url": "http://ohjelmaopas.yle.fi/tv/opas"
+		}
+	  ],
+	  "outlet": [
+		{
+		  "region": "Finland",
+		  "type": "Webcast",
+		  "media": {
+			"id": "10-1",
+			"type": "VideoObject"
+		  }
+		},
+		{
+		  "region": "World",
+		  "type": "Webcast",
+		  "media": {
+			"id": "10-38",
+			"type": "VideoObject"
+		  }
+		}
+	  ],
+	  "language": [
+		"fi"
+	  ],
+	  "active": true,
+	  "id": "yle-tv1",
+	  "displayOrder": 11000,
+	  "typeCreative": "Channel",
+	  "audio": [
+		{
+		  "language": [
+			"fi"
+		  ],
+		  "format": [
+			{
+			  "inScheme": "mediaformat-classification",
+			  "type": "Concept",
+			  "key": "stereo"
+			}
+		  ],
+		  "type": "AudioTrack"
+		},
+		{
+		  "language": [
+			"fi"
+		  ],
+		  "type": "AudioSubtitling"
+		}
+	  ],
+	  "subtitling": [
+		{
+		  "language": [
+			"fi"
+		  ],
+		  "type": "Subtitling"
+		}
+	  ]
+	},
+	{
+	  "video": {
+		"format": [
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "SD"
+		  },
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "16:9"
+		  }
+		],
+		"type": "VideoTrack"
+	  },
+	  "typeMedia": "TVContent",
+	  "homepage": {
+		"title": {
+		  "fi": "Kotisivu",
+		  "sv": "Hemsida"
+		},
+		"type": "WebPage",
+		"url": "http://tv2.yle.fi",
+		"serviceProvider": "http://yle.fi"
+	  },
+	  "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+	  "type": "TVChannel",
+	  "title": {
+		"fi": "Yle TV2"
+	  },
+	  "region": "Finland",
+	  "hasFormat": [
+		{
+		  "id": "yle-tv2-hd",
+		  "title": {
+			"fi": "Yle TV2 HD"
+		  },
+		  "audio": [
+			{
+			  "language": [
+				"fi"
+			  ],
+			  "format": [
+				{
+				  "inScheme": "mediaformat-classification",
+				  "type": "Concept",
+				  "key": "dolby-digital-2.0-stereo"
+				}
+			  ],
+			  "type": "AudioTrack"
+			},
+			{
+			  "language": [
+				"fi"
+			  ],
+			  "type": "AudioSubtitling"
+			}
+		  ],
+		  "typeMedia": "TVContent",
+		  "subtitling": [
+			{
+			  "language": [
+				"fi"
+			  ],
+			  "type": "Subtitling"
+			}
+		  ],
+		  "type": "TVChannel",
+		  "typeCreative": "Channel",
+		  "video": {
+			"format": [
+			  {
+				"inScheme": "mediaformat-classification",
+				"type": "Concept",
+				"key": "HD"
+			  },
+			  {
+				"inScheme": "mediaformat-classification",
+				"type": "Concept",
+				"key": "16:9"
+			  }
+			],
+			"type": "VideoTrack"
+		  }
+		}
+	  ],
+	  "programGuide": [
+		{
+		  "title": {
+			"fi": "Ohjelmaopas",
+			"sv": "Programguide"
+		  },
+		  "type": "WebPage",
+		  "serviceProvider": "http://yle.fi",
+		  "url": "http://ohjelmaopas.yle.fi/tv/opas"
+		}
+	  ],
+	  "outlet": [
+		{
+		  "region": "Finland",
+		  "type": "Webcast",
+		  "media": {
+			"id": "10-2",
+			"type": "VideoObject"
+		  }
+		},
+		{
+		  "region": "World",
+		  "type": "Webcast",
+		  "media": {
+			"id": "10-39",
+			"type": "VideoObject"
+		  }
+		}
+	  ],
+	  "language": [
+		"fi"
+	  ],
+	  "active": true,
+	  "id": "yle-tv2",
+	  "displayOrder": 12000,
+	  "typeCreative": "Channel",
+	  "audio": [
+		{
+		  "format": [
+			{
+			  "inScheme": "mediaformat-classification",
+			  "type": "Concept",
+			  "key": "stereo"
+			}
+		  ],
+		  "language": [
+			"fi"
+		  ],
+		  "type": "AudioTrack"
+		},
+		{
+		  "language": [
+			"fi"
+		  ],
+		  "type": "AudioSubtitling"
+		}
+	  ],
+	  "subtitling": [
+		{
+		  "language": [
+			"fi"
+		  ],
+		  "type": "Subtitling"
+		}
+	  ]
+	},
+	{
+	  "video": {
+		"format": [
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "SD"
+		  },
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "16:9"
+		  }
+		],
+		"type": "VideoTrack"
+	  },
+	  "typeMedia": "TVContent",
+	  "homepage": {
+		"title": {
+		  "fi": "Kotisivu",
+		  "sv": "Hemsida"
+		},
+		"type": "WebPage",
+		"serviceProvider": "http://yle.fi",
+		"url": "http://teema.yle.fi"
+	  },
+	  "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+	  "type": "TVChannel",
+	  "title": {
+		"fi": "Yle Teema"
+	  },
+	  "region": "Finland",
+	  "hasFormat": [
+		{
+		  "id": "yle-teema-hd",
+		  "title": {
+			"fi": "Yle Teema HD"
+		  },
+		  "audio": [
+			{
+			  "format": [
+				{
+				  "inScheme": "mediaformat-classification",
+				  "type": "Concept",
+				  "key": "dolby-digital-2.0-stereo"
+				}
+			  ],
+			  "language": [
+				"fi"
+			  ],
+			  "type": "AudioTrack"
+			},
+			{
+			  "language": [
+				"fi"
+			  ],
+			  "type": "AudioSubtitling"
+			}
+		  ],
+		  "typeMedia": "TVContent",
+		  "subtitling": [
+			{
+			  "language": [
+				"fi"
+			  ],
+			  "type": "Subtitling"
+			}
+		  ],
+		  "type": "TVChannel",
+		  "typeCreative": "Channel",
+		  "video": {
+			"format": [
+			  {
+				"inScheme": "mediaformat-classification",
+				"type": "Concept",
+				"key": "HD"
+			  },
+			  {
+				"inScheme": "mediaformat-classification",
+				"type": "Concept",
+				"key": "16:9"
+			  }
+			],
+			"type": "VideoTrack"
+		  }
+		}
+	  ],
+	  "programGuide": [
+		{
+		  "title": {
+			"fi": "Ohjelmaopas",
+			"sv": "Programguide"
+		  },
+		  "type": "WebPage",
+		  "serviceProvider": "http://yle.fi",
+		  "url": "http://ohjelmaopas.yle.fi/tv/opas"
+		}
+	  ],
+	  "outlet": [
+		{
+		  "region": "Finland",
+		  "type": "Webcast",
+		  "media": {
+			"id": "10-3",
+			"type": "VideoObject"
+		  }
+		},
+		{
+		  "region": "World",
+		  "type": "Webcast",
+		  "media": {
+			"id": "10-40",
+			"type": "VideoObject"
+		  }
+		}
+	  ],
+	  "language": [
+		"fi"
+	  ],
+	  "active": true,
+	  "id": "yle-teema",
+	  "displayOrder": 14000,
+	  "typeCreative": "Channel",
+	  "audio": [
+		{
+		  "format": [
+			{
+			  "inScheme": "mediaformat-classification",
+			  "type": "Concept",
+			  "key": "stereo"
+			}
+		  ],
+		  "language": [
+			"fi"
+		  ],
+		  "type": "AudioTrack"
+		},
+		{
+		  "language": [
+			"fi"
+		  ],
+		  "type": "AudioSubtitling"
+		}
+	  ],
+	  "subtitling": [
+		{
+		  "language": [
+			"fi"
+		  ],
+		  "type": "Subtitling"
+		}
+	  ]
+	},
+	{
+	  "video": {
+		"format": [
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "SD"
+		  },
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "16:9"
+		  }
+		],
+		"type": "VideoTrack"
+	  },
+	  "typeMedia": "TVContent",
+	  "homepage": {
+		"title": {
+		  "fi": "Kotisivu",
+		  "sv": "Hemsida"
+		},
+		"type": "WebPage",
+		"url": "http://svenska.yle.fi/yle-fem",
+		"serviceProvider": "http://yle.fi"
+	  },
+	  "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+	  "type": "TVChannel",
+	  "title": {
+		"sv": "Yle Fem"
+	  },
+	  "region": "Finland",
+	  "hasFormat": [
+		{
+		  "id": "yle-fem-hd",
+		  "title": {
+			"sv": " HD"
+		  },
+		  "audio": [
+			{
+			  "format": [
+				{
+				  "inScheme": "mediaformat-classification",
+				  "type": "Concept",
+				  "key": "dolby-digital-2.0-stereo"
+				}
+			  ],
+			  "language": [
+				"sv"
+			  ],
+			  "type": "AudioTrack"
+			},
+			{
+			  "language": [
+				"sv"
+			  ],
+			  "type": "AudioSubtitling"
+			}
+		  ],
+		  "typeMedia": "TVContent",
+		  "type": "TVChannel",
+		  "subtitling": [
+			{
+			  "language": [
+				"sv"
+			  ],
+			  "type": "Subtitling"
+			},
+			{
+			  "language": [
+				"fi"
+			  ],
+			  "type": "Subtitling"
+			}
+		  ],
+		  "typeCreative": "Channel",
+		  "video": {
+			"format": [
+			  {
+				"inScheme": "mediaformat-classification",
+				"type": "Concept",
+				"key": "HD"
+			  },
+			  {
+				"inScheme": "mediaformat-classification",
+				"type": "Concept",
+				"key": "16:9"
+			  }
+			],
+			"type": "VideoTrack"
+		  }
+		}
+	  ],
+	  "programGuide": [
+		{
+		  "title": {
+			"fi": "Ohjelmaopas",
+			"sv": "Programguide"
+		  },
+		  "type": "WebPage",
+		  "serviceProvider": "http://yle.fi",
+		  "url": "http://ohjelmaopas.yle.fi/tv/guide"
+		}
+	  ],
+	  "outlet": [
+		{
+		  "region": "Finland",
+		  "title": {
+			"fi": "Yle Fem - tekstitetty ruotsiksi",
+			"sv": "Yle Fem - undertexter på svenska"
+		  },
+		  "language": [
+			"sv"
+		  ],
+		  "type": "Webcast",
+		  "media": {
+			"id": "10-5",
+			"type": "VideoObject"
+		  }
+		},
+		{
+		  "region": "Finland",
+		  "title": {
+			"fi": "Yle Fem - suomenkielinen tekstitys",
+			"sv": "Yle Fem - undertexter på finska"
+		  },
+		  "language": [
+			"fi"
+		  ],
+		  "type": "Webcast",
+		  "media": {
+			"id": "10-4",
+			"type": "VideoObject"
+		  }
+		},
+		{
+		  "region": "World",
+		  "title": {
+			"fi": "Yle Fem - tekstitetty ruotsiksi",
+			"sv": "Yle Fem - undertexter på svenska"
+		  },
+		  "language": [
+			"sv"
+		  ],
+		  "type": "Webcast",
+		  "media": {
+			"id": "10-42",
+			"type": "VideoObject"
+		  }
+		},
+		{
+		  "region": "World",
+		  "title": {
+			"fi": "Yle Fem - suomenkielinen tekstitys",
+			"sv": "Yle Fem - undertexter på finska"
+		  },
+		  "language": [
+			"fi"
+		  ],
+		  "type": "Webcast",
+		  "media": {
+			"id": "10-41",
+			"type": "VideoObject"
+		  }
+		}
+	  ],
+	  "language": [
+		"sv",
+		"fi"
+	  ],
+	  "active": true,
+	  "id": "yle-fem",
+	  "displayOrder": 13000,
+	  "typeCreative": "Channel",
+	  "audio": [
+		{
+		  "language": [
+			"sv"
+		  ],
+		  "format": [
+			{
+			  "inScheme": "mediaformat-classification",
+			  "type": "Concept",
+			  "key": "stereo"
+			}
+		  ],
+		  "type": "AudioTrack"
+		},
+		{
+		  "language": [
+			"sv"
+		  ],
+		  "type": "AudioSubtitling"
+		}
+	  ],
+	  "subtitling": [
+		{
+		  "language": [
+			"sv"
+		  ],
+		  "type": "Subtitling"
+		},
+		{
+		  "language": [
+			"fi"
+		  ],
+		  "type": "Subtitling"
+		}
+	  ]
+	},
+	{
+	  "video": {
+		"format": [
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "SD"
+		  },
+		  {
+			"inScheme": "mediaformat-classification",
+			"type": "Concept",
+			"key": "16:9"
+		  }
+		],
+		"type": "VideoTrack"
+	  },
+	  "typeMedia": "TVContent",
+	  "homepage": {
+		"title": {
+		  "fi": "Kotisivu",
+		  "sv": "Hemsida"
+		},
+		"type": "WebPage",
+		"serviceProvider": "http://yle.fi",
+		"url": "http://yle.fi/yleisradio/faq/tv-finland"
+	  },
+	  "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+	  "type": "TVChannel",
+	  "title": {
+		"fi": "TV Finland"
+	  },
+	  "region": "outside-Finland",
+	  "programGuide": [
+		{
+		  "title": {
+			"fi": "Ohjelmaopas",
+			"sv": "Programguide"
+		  },
+		  "type": "WebPage",
+		  "serviceProvider": "http://yle.fi",
+		  "url": "http://ohjelmaopas.yle.fi/tv/opas"
+		}
+	  ],
+	  "outlet": [],
+	  "language": [
+		"fi"
+	  ],
+	  "active": true,
+	  "id": "tv-finland",
+	  "displayOrder": 14500,
+	  "typeCreative": "Channel",
+	  "audio": [
+		{
+		  "format": [
+			{
+			  "inScheme": "mediaformat-classification",
+			  "type": "Concept",
+			  "key": "stereo"
+			}
+		  ],
+		  "language": [
+			"fi"
+		  ],
+		  "type": "AudioTrack"
+		},
+		{
+		  "language": [
+			"fi"
+		  ],
+		  "type": "AudioSubtitling"
+		}
+	  ],
+	  "subtitling": [
+		{
+		  "language": [
+			"fi"
+		  ],
+		  "type": "Subtitling"
+		}
+	  ]
+	},
+	{
+	  "format": [
+		"HD"
+	  ],
+	  "typeMedia": "TVContent",
+	  "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+	  "formatOf": [
+		{
+		  "id": "yle-tv1"
+		},
+		{
+		  "id": "yle-tv2"
+		}
+	  ],
+	  "type": "TVChannel",
+	  "title": {
+		"fi": "Yle HD"
+	  },
+	  "region": "Finland",
+	  "active": true,
+	  "id": "yle-hd",
+	  "displayOrder": 15000,
+	  "typeCreative": "Channel"
+	}
+  ]
+}

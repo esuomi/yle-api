@@ -1,9 +1,9 @@
-package io.induct.yle.api.programs.model.items;
+package io.induct.yle.api.programs.domain.items;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.induct.yle.api.YleId;
-import io.induct.yle.api.programs.model.Item;
+import io.induct.yle.api.programs.domain.Item;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +17,7 @@ public class GenericItem extends Item {
     @JsonCreator
     public GenericItem(@JsonProperty("id") YleId identity,
                        @JsonProperty("type") String type) {
-        super(identity, type);
+        super(identity);
         log.warn("Unknown type '{}' mapped to GenericItem; library needs to be updated for support", type);
     }
 }

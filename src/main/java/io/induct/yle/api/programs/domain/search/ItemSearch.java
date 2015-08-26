@@ -1,4 +1,4 @@
-package io.induct.yle.api.programs.model.search;
+package io.induct.yle.api.programs.domain.search;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
@@ -188,8 +188,8 @@ public class ItemSearch {
         }
 
         public Builder inLanguage(Language language) {
-            if (language != Language.FINNISH && language != Language.SAMI) {
-                throw new IllegalArgumentException("Only Finnish and Sami are supported as item search by language parameter. Was given " + language + " instead");
+            if (language != Language.FINNISH && language != Language.SWEDISH) {
+                throw new IllegalArgumentException("Only Finnish and Swedish are supported as item search by language parameter. Was given " + language + " instead");
             }
             this.language = language;
             return this;

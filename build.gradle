@@ -13,9 +13,20 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    provided
+}
+
 dependencies {
-    compile(group:'io.induct', name:'daniel', version:'0.1.0')
+    compile(group:'io.induct', name:'daniel', version:'0.1.1')
     compile(group:'io.induct.http', name:'http-ning', version:'0.1.0')
-    compile(group:'io.induct.bricks', name:'bricks-ddd', version:'0.1.0')
+    compile(group:'io.induct.bricks', name:'bricks-ddd', version:'0.2.0')
     compile(group:'com.google.inject.extensions', name:'guice-multibindings', version:'4.0')
+    compile(group: 'org.projectlombok', name: 'lombok', version:'1.16.2')
+}
+
+sourceSets {
+    main.compileClasspath += configurations.provided
+    test.compileClasspath += configurations.provided
+    test.runtimeClasspath += configurations.provided
 }

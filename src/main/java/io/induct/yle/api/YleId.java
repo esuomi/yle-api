@@ -1,15 +1,24 @@
 package io.induct.yle.api;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableMap;
 import io.induct.domain.Identifiable;
 
+import java.io.Serializable;
+
 /**
  * @since 2015-05-10
  */
-public class YleId implements Identifiable<String> {
+public class YleId implements Identifiable<String>, Serializable, Comparable<YleId> {
 
     public static final YleId UNIDENTIFIED = new YleId("");
+
+    @Override
+    public int compareTo(YleId that) {
+        return this.identity.compareTo(that.identity);
+    }
 
     public enum Type {
         ESCENIC("3-"),
@@ -64,6 +73,7 @@ public class YleId implements Identifiable<String> {
         return type;
     }
 
+    @JsonGetter("id")
     @Override
     public String identity() {
         return identity;
@@ -71,12 +81,12 @@ public class YleId implements Identifiable<String> {
 
     @Override
     public boolean isIdentified() {
-        return !type.equals(Type.UNKNOWN);
+        return !identity.equals(UNIDENTIFIED);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(type, identity);
+        return Objects.hashCode(identity);
     }
 
     @Override
@@ -88,7 +98,14 @@ public class YleId implements Identifiable<String> {
             return false;
         }
         final YleId other = (YleId) obj;
-        return Objects.equal(this.type, other.type)
-                && Objects.equal(this.identity, other.identity);
+        return Objects.equal(this.identity, other.identity);
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("type", type)
+                .add("identity", identity)
+                .toString();
     }
 }

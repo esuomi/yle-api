@@ -1,4 +1,4 @@
-package io.induct.yle.api.programs.model;
+package io.induct.yle.api.programs.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

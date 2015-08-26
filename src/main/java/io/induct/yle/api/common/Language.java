@@ -5,10 +5,10 @@ package io.induct.yle.api.common;
  */
 public enum Language {
     FINNISH("fi"),
-    SAMI("sv"),
     RUSSIAN("ru"),
     ENGLISH("en"),
-    SWEDISH("se");
+    SWEDISH("sv"),
+    UNKNOWN("unknown");
 
     private final String languageCode;
 
