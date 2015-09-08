@@ -19,6 +19,7 @@ signing {
     sign configurations.archives
 }
 
+uploadArchives.onlyIf { ['ossrhUsername', 'ossrhPassword'].every { project.hasProperty(it) } }
 uploadArchives {
     repositories {
         mavenDeployer {
