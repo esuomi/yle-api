@@ -22,7 +22,9 @@ dependencies {
     compile(group:'io.induct.http', name:'http-ning', version:'0.1.0')
     compile(group:'io.induct.bricks', name:'bricks-ddd', version:'0.2.0')
     compile(group:'com.google.inject.extensions', name:'guice-multibindings', version:'4.0')
-    compile(group: 'org.projectlombok', name: 'lombok', version:'1.16.2')
+    compile(group:'org.projectlombok', name: 'lombok', version:'1.16.2')
+    // Cloudinary is the image management solution used by Yle for their program images
+    compile(group:'com.cloudinary', name:'cloudinary-core', version:'1.2.1')
 }
 
 sourceSets {
