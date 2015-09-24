@@ -3,13 +3,10 @@ package io.induct.yle.api.programs.domain.items;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
-import io.induct.daniel.Daniel;
 import io.induct.rest.ApiResponse;
-import io.induct.yle.YleApiTestingBase;
+import io.induct.yle.api.YleDomainEntityTestBase;
 import io.induct.yle.api.YleId;
 import io.induct.yle.api.common.Language;
-import io.induct.yle.api.programs.domain.items.TvProgram.Audio;
 import io.induct.yle.api.programs.domain.items.TvProgram.ContentRating;
 import io.induct.yle.api.programs.domain.items.TvProgram.Creator;
 import io.induct.yle.api.programs.domain.items.TvProgram.Image;
@@ -21,33 +18,26 @@ import io.induct.yle.api.programs.domain.items.TvProgram.Subtitling;
 import io.induct.yle.api.programs.domain.items.TvProgram.Video;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
-import org.junit.Before;
-import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Map;
-
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 
 /**
  * @since 2015-08-04
  */
-public class TvProgramTest extends YleApiTestingBase {
+public class TvProgramTest extends YleDomainEntityTestBase<TvProgram> {
 
-    private Daniel daniel;
-
-    @Before
-    public void setUp() throws Exception {
-        daniel = injector.getInstance(Daniel.class);
+    @Override
+    protected TypeReference<ApiResponse<TvProgram>> typeDefinition() {
+        return new TypeReference<ApiResponse<TvProgram>>() {};
     }
 
-    private final TypeReference<ApiResponse<TvProgram>> tvProgram = new TypeReference<ApiResponse<TvProgram>>() {
-    };
+    @Override
+    protected String testResource() {
+        return "api/v1/programs/items/1-2048985.json";
+    }
 
-    @Test
-    public void shouldDeserializeFromExampleApiResponse() throws Exception {
+    @Override
+    protected TvProgram expectedDomainEntity() {
         TvProgram expectedLovejoyEpisode = new TvProgram(
                 new YleId("1-2048985"),
                 localized(
@@ -169,18 +159,6 @@ public class TvProgramTest extends YleApiTestingBase {
                         new Subtitling(Arrays.asList(Language.FINNISH), "Subtitling")
                 )
         );
-
-        ApiResponse<TvProgram> item = daniel.deserialize(tvProgram, resource("api/v1/programs/items/1-2048985.json").get());
-        TvProgram program = item.getData();
-
-        assertThat(program, is(equalTo(expectedLovejoyEpisode)));
-    }
-
-    private static Map<Language, String> localized(Object... vals) {
-        Map<Language, String> map = Maps.newLinkedHashMap();
-        for (int i = 0; i < vals.length; ) {
-            map.put((Language) vals[i++], (String) vals[i++]);
-        }
-        return map;
+        return expectedLovejoyEpisode;
     }
 }
