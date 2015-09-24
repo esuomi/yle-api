@@ -1,0 +1,158 @@
+{
+  "apiVersion": "1.0.1398",
+  "meta": {
+    "service": "yle-radio-1",
+    "start": 0,
+    "end": 0,
+    "count": 1
+  },
+  "data": [
+    {
+      "type": "NowPlaying",
+      "startTime": "2015-09-11T13:54:24+0300",
+      "endTime": "2015-09-11T13:56:32+0300",
+      "duration": "PT128S",
+      "content": {
+        "id": "12-1022-2-90533",
+        "type": "MusicRecording",
+        "title": {
+          "unknown": "Kuus, kuus kallike (Kuss-kuss, kallike) (Eestiläinen kehtolaulu) versio naiskuorolle ja jousille kokoelmasta Kaks hällilaulu (Kaksi kehtolaulua)."
+        },
+        "performer": [
+          {
+            "type": "agent",
+            "name": "Tönu Kaljuste"
+          },
+          {
+            "type": "agent",
+            "name": "Eesti Filharmoonia kammerkoor (Viron filharmonian kamarikuoro)"
+          },
+          {
+            "type": "agent",
+            "name": "Tallinna Kammerorkester (Tallinnan kamariorkesteri)"
+          }
+        ],
+        "description": {
+          "unknown": "Pärt: Kuus, kuus kallike (Tallinnan kamariorkesteri ja Viron filharmonian kamarikuoro/Tönu Kaljuste)."
+        }
+      },
+      "service": {
+        "typeMedia": "RadioContent",
+        "homepage": {
+          "title": {
+            "fi": "Kotisivu",
+            "sv": "Hemsida"
+          },
+          "type": "WebPage",
+          "serviceProvider": "http://yle.fi",
+          "url": "http://yle.fi/radio1"
+        },
+        "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+        "type": "RadioChannel",
+        "interaction": [
+          {
+            "title": {
+              "fi": "Twitter"
+            },
+            "hasVersion": [
+              {
+                "title": {
+                  "fi": "Twitter"
+                },
+                "device": "mobile",
+                "type": "WebPage",
+                "serviceProvider": "http://twitter.com",
+                "url": "https://mobile.twitter.com/yleradio1"
+              }
+            ],
+            "type": "WebPage",
+            "serviceProvider": "http://twitter.com",
+            "url": "https://twitter.com/yleradio1"
+          },
+          {
+            "title": {
+              "fi": "Facebook"
+            },
+            "hasVersion": [
+              {
+                "title": {
+                  "fi": "Facebook"
+                },
+                "device": "mobile",
+                "type": "WebPage",
+                "serviceProvider": "http://facebook.com",
+                "url": "https://m.facebook.com/yleradio1"
+              }
+            ],
+            "type": "WebPage",
+            "url": "https://facebook.com/yleradio1",
+            "serviceProvider": "http://facebook.com"
+          }
+        ],
+        "title": {
+          "fi": "Yle Radio 1"
+        },
+        "region": "Finland",
+        "programGuide": [
+          {
+            "title": {
+              "fi": "Ohjelmaopas",
+              "sv": "Programguide"
+            },
+            "type": "WebPage",
+            "url": "http://ohjelmaopas.yle.fi/radio/opas",
+            "serviceProvider": "http://yle.fi"
+          }
+        ],
+        "outlet": [
+          {
+            "region": "Finland",
+            "type": "Webcast",
+            "media": {
+              "id": "10-6",
+              "type": "AudioObject"
+            }
+          },
+          {
+            "region": "World",
+            "type": "Webcast",
+            "media": {
+              "id": "10-6",
+              "type": "AudioObject"
+            }
+          }
+        ],
+        "language": [
+          "fi"
+        ],
+        "active": true,
+        "id": "yle-radio-1",
+        "displayOrder": 1000,
+        "typeCreative": "Channel",
+        "audio": [
+          {
+            "language": [
+              "fi"
+            ],
+            "format": [
+              {
+                "inScheme": "mediaformat-classification",
+                "type": "Concept",
+                "key": "stereo"
+              }
+            ],
+            "type": "AudioTrack"
+          }
+        ]
+      },
+      "delta": "0",
+      "partOf": {
+        "id": "12-1022-4-262431",
+        "type": "RadioProgram",
+        "title": {
+          "fi": "Klassista kahteen"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,533 @@
+{
+  "apiVersion": "1.0.1398",
+  "meta": {
+    "offset": "0",
+    "limit": "5",
+    "type": "radiochannel",
+    "count": 32
+  },
+  "data": [
+    {
+      "typeMedia": "RadioContent",
+      "homepage": {
+        "title": {
+          "fi": "Kotisivu",
+          "sv": "Hemsida"
+        },
+        "type": "WebPage",
+        "url": "http://yle.fi/radio1",
+        "serviceProvider": "http://yle.fi"
+      },
+      "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+      "type": "RadioChannel",
+      "interaction": [
+        {
+          "title": {
+            "fi": "Twitter"
+          },
+          "hasVersion": [
+            {
+              "title": {
+                "fi": "Twitter"
+              },
+              "device": "mobile",
+              "type": "WebPage",
+              "url": "https://mobile.twitter.com/yleradio1",
+              "serviceProvider": "http://twitter.com"
+            }
+          ],
+          "type": "WebPage",
+          "url": "https://twitter.com/yleradio1",
+          "serviceProvider": "http://twitter.com"
+        },
+        {
+          "title": {
+            "fi": "Facebook"
+          },
+          "hasVersion": [
+            {
+              "title": {
+                "fi": "Facebook"
+              },
+              "device": "mobile",
+              "type": "WebPage",
+              "url": "https://m.facebook.com/yleradio1",
+              "serviceProvider": "http://facebook.com"
+            }
+          ],
+          "type": "WebPage",
+          "serviceProvider": "http://facebook.com",
+          "url": "https://facebook.com/yleradio1"
+        }
+      ],
+      "title": {
+        "fi": "Yle Radio 1"
+      },
+      "region": "Finland",
+      "programGuide": [
+        {
+          "title": {
+            "fi": "Ohjelmaopas",
+            "sv": "Programguide"
+          },
+          "type": "WebPage",
+          "serviceProvider": "http://yle.fi",
+          "url": "http://ohjelmaopas.yle.fi/radio/opas"
+        }
+      ],
+      "outlet": [
+        {
+          "region": "Finland",
+          "type": "Webcast",
+          "media": {
+            "id": "10-6",
+            "type": "AudioObject"
+          }
+        },
+        {
+          "region": "World",
+          "type": "Webcast",
+          "media": {
+            "id": "10-6",
+            "type": "AudioObject"
+          }
+        }
+      ],
+      "language": [
+        "fi"
+      ],
+      "active": true,
+      "id": "yle-radio-1",
+      "displayOrder": 1000,
+      "typeCreative": "Channel",
+      "audio": [
+        {
+          "format": [
+            {
+              "inScheme": "mediaformat-classification",
+              "type": "Concept",
+              "key": "stereo"
+            }
+          ],
+          "language": [
+            "fi"
+          ],
+          "type": "AudioTrack"
+        }
+      ]
+    },
+    {
+      "typeMedia": "RadioContent",
+      "homepage": {
+        "title": {
+          "fi": "Kotisivu",
+          "sv": "Hemsida"
+        },
+        "type": "WebPage",
+        "url": "http://yle.fi/puhe",
+        "serviceProvider": "http://yle.fi"
+      },
+      "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+      "type": "RadioChannel",
+      "interaction": [
+        {
+          "title": {
+            "fi": "Twitter"
+          },
+          "hasVersion": [
+            {
+              "title": {
+                "fi": "Twitter"
+              },
+              "device": "mobile",
+              "type": "WebPage",
+              "serviceProvider": "http://twitter.com",
+              "url": "https://mobile.twitter.com/ylepuhe"
+            }
+          ],
+          "type": "WebPage",
+          "url": "https://twitter.com/ylepuhe",
+          "serviceProvider": "http://twitter.com"
+        },
+        {
+          "title": {
+            "fi": "Facebook"
+          },
+          "hasVersion": [
+            {
+              "title": {
+                "fi": "Facebook"
+              },
+              "device": "mobile",
+              "type": "WebPage",
+              "serviceProvider": "http://facebook.com",
+              "url": "https://m.facebook.com/ylepuhe"
+            }
+          ],
+          "type": "WebPage",
+          "serviceProvider": "http://facebook.com",
+          "url": "https://facebook.com/ylepuhe"
+        }
+      ],
+      "title": {
+        "fi": "Yle Puhe"
+      },
+      "region": "Finland",
+      "programGuide": [
+        {
+          "title": {
+            "fi": "Ohjelmaopas",
+            "sv": "Programguide"
+          },
+          "type": "WebPage",
+          "serviceProvider": "http://yle.fi",
+          "url": "http://ohjelmaopas.yle.fi/radio/opas"
+        }
+      ],
+      "outlet": [
+        {
+          "region": "Finland",
+          "type": "Webcast",
+          "media": {
+            "id": "10-19",
+            "type": "AudioObject"
+          }
+        },
+        {
+          "region": "World",
+          "type": "Webcast",
+          "media": {
+            "id": "10-19",
+            "type": "AudioObject"
+          }
+        }
+      ],
+      "language": [
+        "fi"
+      ],
+      "active": true,
+      "id": "yle-puhe",
+      "displayOrder": 4000,
+      "typeCreative": "Channel",
+      "audio": [
+        {
+          "format": [
+            {
+              "inScheme": "mediaformat-classification",
+              "type": "Concept",
+              "key": "stereo"
+            }
+          ],
+          "language": [
+            "fi"
+          ],
+          "type": "AudioTrack"
+        }
+      ]
+    },
+    {
+      "typeMedia": "RadioContent",
+      "homepage": {
+        "title": {
+          "fi": "Kotisivu",
+          "sv": "Hemsida"
+        },
+        "type": "WebPage",
+        "serviceProvider": "http://yle.fi",
+        "url": "http://yle.fi/mondo"
+      },
+      "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+      "type": "RadioChannel",
+      "interaction": [],
+      "title": {
+        "fi": "Yle Mondo"
+      },
+      "region": "Finland",
+      "programGuide": [
+        {
+          "title": {
+            "fi": "Ohjelmaopas",
+            "sv": "Programguide"
+          },
+          "type": "WebPage",
+          "serviceProvider": "http://yle.fi",
+          "url": "http://ohjelmaopas.yle.fi/radio/opas"
+        }
+      ],
+      "outlet": [],
+      "language": [
+        "en",
+        "ru",
+        "de",
+        "fr",
+        "it",
+        "no",
+        "da",
+        "et",
+        "fi"
+      ],
+      "active": true,
+      "id": "yle-mondo",
+      "displayOrder": 8000,
+      "typeCreative": "Channel",
+      "audio": [
+        {
+          "format": [
+            {
+              "inScheme": "mediaformat-classification",
+              "type": "Concept",
+              "key": "stereo"
+            }
+          ],
+          "language": [
+            "en",
+            "ru",
+            "de",
+            "fr",
+            "it",
+            "no",
+            "da",
+            "et",
+            "fi"
+          ],
+          "type": "AudioTrack"
+        }
+      ]
+    },
+    {
+      "hasVersion": [
+        {
+          "title": {
+            "fi": "YleX-studiokamera"
+          },
+          "outlet": [
+            {
+              "type": "Webcast",
+              "media": {
+                "id": "9-100",
+                "type": "VideoObject"
+              }
+            }
+          ],
+          "type": "TVChannel"
+        }
+      ],
+      "typeMedia": "RadioContent",
+      "homepage": {
+        "title": {
+          "fi": "Kotisivu",
+          "sv": "Hemsida"
+        },
+        "type": "WebPage",
+        "serviceProvider": "http://yle.fi",
+        "url": "http://ylex.yle.fi"
+      },
+      "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+      "type": "RadioChannel",
+      "interaction": [
+        {
+          "title": {
+            "fi": "Twitter"
+          },
+          "hasVersion": [
+            {
+              "title": {
+                "fi": "Twitter"
+              },
+              "device": "mobile",
+              "type": "WebPage",
+              "serviceProvider": "http://twitter.com",
+              "url": "https://mobile.twitter.com/ylex"
+            }
+          ],
+          "type": "WebPage",
+          "url": "https://twitter.com/ylex",
+          "serviceProvider": "http://twitter.com"
+        },
+        {
+          "title": {
+            "fi": "Facebook"
+          },
+          "hasVersion": [
+            {
+              "title": {
+                "fi": "Facebook"
+              },
+              "device": "mobile",
+              "type": "WebPage",
+              "serviceProvider": "http://facebook.com",
+              "url": "https://m.facebook.com/ylex.fi"
+            }
+          ],
+          "type": "WebPage",
+          "serviceProvider": "http://facebook.com",
+          "url": "https://facebook.com/ylex.fi"
+        }
+      ],
+      "title": {
+        "fi": "YleX"
+      },
+      "region": "Finland",
+      "programGuide": [
+        {
+          "title": {
+            "fi": "Ohjelmaopas",
+            "sv": "Programguide"
+          },
+          "type": "WebPage",
+          "url": "http://ohjelmaopas.yle.fi/radio/opas",
+          "serviceProvider": "http://yle.fi"
+        }
+      ],
+      "outlet": [
+        {
+          "region": "Finland",
+          "type": "Webcast",
+          "media": {
+            "id": "10-7",
+            "type": "AudioObject"
+          }
+        },
+        {
+          "region": "World",
+          "type": "Webcast",
+          "media": {
+            "id": "10-7",
+            "type": "AudioObject"
+          }
+        }
+      ],
+      "language": [
+        "fi"
+      ],
+      "active": true,
+      "id": "ylex",
+      "displayOrder": 2000,
+      "typeCreative": "Channel",
+      "audio": [
+        {
+          "language": [
+            "fi"
+          ],
+          "format": [
+            {
+              "inScheme": "mediaformat-classification",
+              "type": "Concept",
+              "key": "stereo"
+            }
+          ],
+          "type": "AudioTrack"
+        }
+      ]
+    },
+    {
+      "typeMedia": "RadioContent",
+      "homepage": {
+        "title": {
+          "fi": "Kotisivu",
+          "sv": "Hemsida"
+        },
+        "type": "WebPage",
+        "serviceProvider": "http://yle.fi",
+        "url": "http://yle.fi/extrem"
+      },
+      "indexDataModified": "2015-06-12T11:38:55.096+03:00",
+      "type": "RadioChannel",
+      "interaction": [
+        {
+          "title": {
+            "fi": "Twitter"
+          },
+          "hasVersion": [
+            {
+              "title": {
+                "fi": "Twitter"
+              },
+              "device": "mobile",
+              "type": "WebPage",
+              "url": "https://mobile.twitter.com/RadioX3M",
+              "serviceProvider": "http://twitter.com"
+            }
+          ],
+          "type": "WebPage",
+          "url": "https://twitter.com/RadioX3M",
+          "serviceProvider": "http://twitter.com"
+        },
+        {
+          "title": {
+            "fi": "Facebook"
+          },
+          "hasVersion": [
+            {
+              "title": {
+                "fi": "Facebook"
+              },
+              "device": "mobile",
+              "type": "WebPage",
+              "serviceProvider": "http://facebook.com",
+              "url": "https://m.facebook.com/radiox3m"
+            }
+          ],
+          "type": "WebPage",
+          "url": "https://facebook.com/radiox3m",
+          "serviceProvider": "http://facebook.com"
+        }
+      ],
+      "title": {
+        "sv": "Yle X3M"
+      },
+      "region": "Finland",
+      "programGuide": [
+        {
+          "title": {
+            "fi": "Ohjelmaopas",
+            "sv": "Programguide"
+          },
+          "type": "WebPage",
+          "url": "http://ohjelmaopas.yle.fi/radio/guide",
+          "serviceProvider": "http://yle.fi"
+        }
+      ],
+      "outlet": [
+        {
+          "region": "Finland",
+          "type": "Webcast",
+          "media": {
+            "id": "10-18",
+            "type": "AudioObject"
+          }
+        },
+        {
+          "region": "World",
+          "type": "Webcast",
+          "media": {
+            "id": "10-18",
+            "type": "AudioObject"
+          }
+        }
+      ],
+      "language": [
+        "sv"
+      ],
+      "active": true,
+      "id": "yle-x3m",
+      "displayOrder": 7000,
+      "typeCreative": "Channel",
+      "audio": [
+        {
+          "language": [
+            "sv"
+          ],
+          "format": [
+            {
+              "inScheme": "mediaformat-classification",
+              "type": "Concept",
+              "key": "stereo"
+            }
+          ],
+          "type": "AudioTrack"
+        }
+      ]
+    }
+  ]
+}

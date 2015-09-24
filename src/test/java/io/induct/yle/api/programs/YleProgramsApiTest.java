@@ -8,6 +8,7 @@ import io.induct.yle.api.common.Language;
 import io.induct.yle.api.common.MediaObject;
 import io.induct.yle.api.programs.domain.CuratedList;
 import io.induct.yle.api.programs.domain.Item;
+import io.induct.yle.api.programs.domain.NowPlaying;
 import io.induct.yle.api.programs.domain.items.Service;
 import io.induct.yle.api.programs.domain.search.ItemSearch;
 import org.junit.Before;
@@ -70,16 +71,34 @@ public class YleProgramsApiTest extends YleApiTestingBase {
 
     @Test
     public void shouldListServices() throws Exception {
-        whenCallingGet("https://external.api.yle.fi/v1/programs/services.json")
-                .thenReturn(new StaticResponse(200, mapOf(), resource("api/v1/programs/services.json")));
+        whenCallingGet("https://external.api.yle.fi/v1/programs/tvchannel_services.json")
+                .thenReturn(new StaticResponse(200, mapOf(), resource("api/v1/programs/tvchannel_services.json")));
 
         ApiResponse<List<Service>> services = programsApi.listServices(Service.Type.TV_CHANNEL, 10, 0);
 
         verify(httpClient).get(
-                eq("https://external.api.yle.fi/v1/programs/services.json"),
+                eq("https://external.api.yle.fi/v1/programs/tvchannel_services.json"),
                 eq(params("limit", "10", "offset", "0", "type", "tvchannel")),
                 eq(mapOf()),
                 any(InputStream.class));
+    }
+
+    /**
+     * @see <a href="http://developer.yle.fi/tutorial-get-currently-playing-radio-program/">Yle Api tutorial: Finding out what’s playing on the radio</a>
+     */
+    @Test
+    public void shouldBeAbleToGetUrlForCurrentlyPlayingRadioProgram() throws Exception {
+        whenCallingGet("https://external.api.yle.fi/v1/programs/tvchannel_services.json")
+                .thenReturn(new StaticResponse(200, mapOf(), resource("api/v1/programs/radiochannel_services.json")));
+
+        ApiResponse<List<Service>> services = programsApi.listServices(Service.Type.RADIO_CHANNEL, 5, 0);
+
+        verify(httpClient).get(
+                eq("https://external.api.yle.fi/v1/programs/tvchannel_services.json"),
+                eq(params("limit", "10", "offset", "0", "type", "tvchannel")),
+                eq(mapOf()),
+                any(InputStream.class));
+
     }
 
     @Test
@@ -96,4 +115,18 @@ public class YleProgramsApiTest extends YleApiTestingBase {
                 any(InputStream.class));
     }
 
+
+    @Test
+    public void shouldReturnNowPlaying() throws Exception {
+        whenCallingGet("https://external.api.yle.fi/v1/programs/nowplaying/yle-radio-1.json")
+                .thenReturn(new StaticResponse(200, mapOf(), resource("api/v1/programs/nowplaying.json")));
+
+        ApiResponse<NowPlaying> nowPlaying = programsApi.nowPlaying("yle-radio-1");
+
+        verify(httpClient).get(
+                eq("https://external.api.yle.fi/v1/programs/lists.json"),
+                eq(params("limit", "10", "offset", "0", "language", "fi", "type", "radiocontent")),
+                eq(mapOf()),
+                any(InputStream.class));
+    }
 }
