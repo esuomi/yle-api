@@ -8,6 +8,7 @@ import io.induct.yle.api.YleId;
 import io.induct.yle.api.common.Language;
 import io.induct.yle.api.programs.domain.CuratedList;
 import io.induct.yle.api.programs.domain.Item;
+import io.induct.yle.api.programs.domain.NowPlaying;
 import io.induct.yle.api.programs.domain.items.Service;
 import io.induct.yle.api.programs.domain.search.ItemSearch;
 
@@ -25,6 +26,7 @@ public class YleProgramsApi extends StandardizedApi {
     private final TypeReference<ApiResponse<List<Item>>> listOfItems;
     private final TypeReference<ApiResponse<Item>> singleItem;
     private final TypeReference<ApiResponse<List<CuratedList>>> listOfCuratedLists;
+    private final TypeReference<ApiResponse<List<NowPlaying>>> nowPlaying;
 
     @Inject
     public YleProgramsApi() {
@@ -33,6 +35,7 @@ public class YleProgramsApi extends StandardizedApi {
         this.listOfItems = new TypeReference<ApiResponse<List<Item>>>() {};
         this.singleItem = new TypeReference<ApiResponse<Item>>() {};
         this.listOfCuratedLists = new TypeReference<ApiResponse<List<CuratedList>>>() {};
+        this.nowPlaying = new TypeReference<ApiResponse<List<NowPlaying>>>() {};
     }
 
     public ApiResponse<List<Service>> listServices(Service.Type type, int limit, int offset) {
@@ -79,5 +82,17 @@ public class YleProgramsApi extends StandardizedApi {
                 .build();
 
         return handleApiCall(request, singleItem);
+    }
+
+    public ApiResponse<List<NowPlaying>> nowPlaying(String id) {
+        Request request = createRequestBuilder()
+                .withPath("/v1/programs/nowplaying/" + id + ".json")
+                .withParams(params -> {
+                    params.put("start", Integer.toString(-1));
+                    params.put("end", Integer.toString(1));
+                })
+                .build();
+
+        return handleApiCall(request, nowPlaying);
     }
 }

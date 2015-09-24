@@ -17,6 +17,8 @@ import io.induct.yle.api.media.domain.DecryptedPlayout;
 import io.induct.yle.api.media.domain.EncryptedPlayout;
 import io.induct.yle.api.media.domain.Playout;
 import io.induct.yle.api.programs.domain.Item;
+import io.induct.yle.api.programs.domain.NowPlaying;
+import io.induct.yle.api.programs.domain.items.Service;
 import io.induct.yle.api.programs.domain.items.TvProgram;
 import io.induct.yle.ioc.YleApiModule;
 import org.slf4j.Logger;
@@ -37,7 +39,9 @@ public class Example {
         try (NingHttpClient ningClient = new NingHttpClient(new AsyncHttpClient())) {
             Example example = new Example(ningClient);
 
-            example.runTutorial1();
+            //example.runTutorial1();
+
+            example.runTutorial_FindingOutWhatsPlayingOnTheRadio();
         }
     }
 
@@ -51,6 +55,23 @@ public class Example {
         Injector injector = initialize(ningClient);
         this.api = injector.getInstance(YleApi.class);
         this.decrypter = injector.getInstance(Decrypter.class);
+    }
+
+    private void runTutorial_FindingOutWhatsPlayingOnTheRadio() {
+        findRadioService();
+    }
+
+    private void findRadioService() {
+        for (Service service : api.programs().listServices(Service.Type.RADIO_CHANNEL, 5, 0).getData()) {
+            if (service.getId().equals("yle-radio-1")) {
+                findWhatIsNowPlaying(service);
+                return;
+            }
+        }
+    }
+
+    private void findWhatIsNowPlaying(Service service) {
+        ApiResponse<List<NowPlaying>> nowPlaying = api.programs().nowPlaying(service.getId());
     }
 
     private void runTutorial1() {
