@@ -6,15 +6,19 @@ import io.induct.rest.ApiResponse;
 import io.induct.yle.api.YleDomainEntityTestBase;
 import io.induct.yle.api.common.Language;
 import org.joda.time.DateTime;
+import org.junit.Ignore;
+
+import java.util.List;
 
 /**
  * @since 2015-09-11
  */
-public class ServiceTest extends YleDomainEntityTestBase<Service> {
+@Ignore("test not fully ready yet")
+public class ServiceTest extends YleDomainEntityTestBase<List<Service>> {
 
     @Override
-    protected TypeReference<ApiResponse<Service>> typeDefinition() {
-        return new TypeReference<ApiResponse<Service>>() {};
+    protected TypeReference<ApiResponse<List<Service>>> typeDefinition() {
+        return new TypeReference<ApiResponse<List<Service>>>() {};
     }
 
     @Override
@@ -23,8 +27,8 @@ public class ServiceTest extends YleDomainEntityTestBase<Service> {
     }
 
     @Override
-    protected Service expectedDomainEntity() {
-        return new Service(
+    protected List<Service> expectedDomainEntity() {
+        return Lists.newArrayList(new Service(
                 "RadioContent",
                 new Service.Homepage(
                         localized(Language.FINNISH, "Kotisivu", Language.SWEDISH, "Hemsida"),
@@ -32,7 +36,7 @@ public class ServiceTest extends YleDomainEntityTestBase<Service> {
                         "http://yle.fi/radio1",
                         "http://yle.fi"
                 ),
-                new DateTime("2015-06-12T11:38:55.096+03:00"),
+                new DateTime("2015-06-12T08:38:55.096Z"),
                 "RadioChannel",
                 Lists.newArrayList(
                         new Service.Interaction(
@@ -99,6 +103,7 @@ public class ServiceTest extends YleDomainEntityTestBase<Service> {
                                 ),
                                 "AudioTrack"
                         )
-                ));
+                ))
+        );
     }
 }

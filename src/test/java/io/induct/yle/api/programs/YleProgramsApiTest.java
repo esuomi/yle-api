@@ -71,13 +71,13 @@ public class YleProgramsApiTest extends YleApiTestingBase {
 
     @Test
     public void shouldListServices() throws Exception {
-        whenCallingGet("https://external.api.yle.fi/v1/programs/tvchannel_services.json")
+        whenCallingGet("https://external.api.yle.fi/v1/programs/services.json")
                 .thenReturn(new StaticResponse(200, mapOf(), resource("api/v1/programs/tvchannel_services.json")));
 
         ApiResponse<List<Service>> services = programsApi.listServices(Service.Type.TV_CHANNEL, 10, 0);
 
         verify(httpClient).get(
-                eq("https://external.api.yle.fi/v1/programs/tvchannel_services.json"),
+                eq("https://external.api.yle.fi/v1/programs/services.json"),
                 eq(params("limit", "10", "offset", "0", "type", "tvchannel")),
                 eq(mapOf()),
                 any(InputStream.class));
@@ -88,14 +88,14 @@ public class YleProgramsApiTest extends YleApiTestingBase {
      */
     @Test
     public void shouldBeAbleToGetUrlForCurrentlyPlayingRadioProgram() throws Exception {
-        whenCallingGet("https://external.api.yle.fi/v1/programs/tvchannel_services.json")
+        whenCallingGet("https://external.api.yle.fi/v1/programs/services.json")
                 .thenReturn(new StaticResponse(200, mapOf(), resource("api/v1/programs/radiochannel_services.json")));
 
         ApiResponse<List<Service>> services = programsApi.listServices(Service.Type.RADIO_CHANNEL, 5, 0);
 
         verify(httpClient).get(
-                eq("https://external.api.yle.fi/v1/programs/tvchannel_services.json"),
-                eq(params("limit", "10", "offset", "0", "type", "tvchannel")),
+                eq("https://external.api.yle.fi/v1/programs/services.json"),
+                eq(params("limit", "5", "offset", "0", "type", "radiochannel")),
                 eq(mapOf()),
                 any(InputStream.class));
 
