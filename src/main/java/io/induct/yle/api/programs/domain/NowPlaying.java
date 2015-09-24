@@ -49,6 +49,19 @@ public class NowPlaying {
         private final List<Performer> performers;
         private final Map<Language, String> descriptions;
 
+        @JsonCreator
+        public Content(@JsonProperty("id") YleId id,
+                       @JsonProperty("type") String type,
+                       @JsonProperty("title") Map<Language, String> titles,
+                       @JsonProperty("performer") List<Performer> performers,
+                       @JsonProperty("description") Map<Language, String> descriptions) {
+            this.id = id;
+            this.type = type;
+            this.titles = titles;
+            this.performers = performers;
+            this.descriptions = descriptions;
+        }
+
         @Data
         public static class Performer {
             private final String type;

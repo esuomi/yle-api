@@ -121,11 +121,11 @@ public class YleProgramsApiTest extends YleApiTestingBase {
         whenCallingGet("https://external.api.yle.fi/v1/programs/nowplaying/yle-radio-1.json")
                 .thenReturn(new StaticResponse(200, mapOf(), resource("api/v1/programs/nowplaying.json")));
 
-        ApiResponse<NowPlaying> nowPlaying = programsApi.nowPlaying("yle-radio-1");
+        ApiResponse<List<NowPlaying>> nowPlaying = programsApi.nowPlaying("yle-radio-1");
 
         verify(httpClient).get(
-                eq("https://external.api.yle.fi/v1/programs/lists.json"),
-                eq(params("limit", "10", "offset", "0", "language", "fi", "type", "radiocontent")),
+                eq("https://external.api.yle.fi/v1/programs/nowplaying/yle-radio-1.json"),
+                eq(params("start", "-1", "end", "1")),
                 eq(mapOf()),
                 any(InputStream.class));
     }

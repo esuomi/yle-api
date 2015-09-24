@@ -71,7 +71,7 @@ public class Example {
     }
 
     private void findWhatIsNowPlaying(Service service) {
-        ApiResponse<NowPlaying> nowPlaying = api.programs().nowPlaying(service.getId());
+        ApiResponse<List<NowPlaying>> nowPlaying = api.programs().nowPlaying(service.getId());
     }
 
     private void runTutorial1() {

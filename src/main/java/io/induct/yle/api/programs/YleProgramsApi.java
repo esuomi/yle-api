@@ -26,6 +26,7 @@ public class YleProgramsApi extends StandardizedApi {
     private final TypeReference<ApiResponse<List<Item>>> listOfItems;
     private final TypeReference<ApiResponse<Item>> singleItem;
     private final TypeReference<ApiResponse<List<CuratedList>>> listOfCuratedLists;
+    private final TypeReference<ApiResponse<List<NowPlaying>>> nowPlaying;
 
     @Inject
     public YleProgramsApi() {
@@ -34,6 +35,7 @@ public class YleProgramsApi extends StandardizedApi {
         this.listOfItems = new TypeReference<ApiResponse<List<Item>>>() {};
         this.singleItem = new TypeReference<ApiResponse<Item>>() {};
         this.listOfCuratedLists = new TypeReference<ApiResponse<List<CuratedList>>>() {};
+        this.nowPlaying = new TypeReference<ApiResponse<List<NowPlaying>>>() {};
     }
 
     public ApiResponse<List<Service>> listServices(Service.Type type, int limit, int offset) {
@@ -82,7 +84,7 @@ public class YleProgramsApi extends StandardizedApi {
         return handleApiCall(request, singleItem);
     }
 
-    public ApiResponse<NowPlaying> nowPlaying(String id) {
+    public ApiResponse<List<NowPlaying>> nowPlaying(String id) {
         Request request = createRequestBuilder()
                 .withPath("/v1/programs/nowplaying/" + id + ".json")
                 .withParams(params -> {
@@ -91,6 +93,6 @@ public class YleProgramsApi extends StandardizedApi {
                 })
                 .build();
 
-        return handleApiCall(request, null);
+        return handleApiCall(request, nowPlaying);
     }
 }
