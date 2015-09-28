@@ -23,12 +23,12 @@ Maven:
 <dependency>
     <groupId>io.induct</groupId>
     <artifactId>yle-api</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
 </dependency>
 ```
 Gradle:
 ```groovy
-compile 'io.induct:yle-api:0.1.0'
+compile 'io.induct:yle-api:0.2.0'
 ```
 
 ### Getting Started
