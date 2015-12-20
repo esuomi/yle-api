@@ -16,6 +16,4 @@ dependencies {
     testCompile group: 'org.hamcrest', name: 'hamcrest-junit', version: '2.0.0.0'
 }
 
-compileJava {
-    options.encoding = "UTF-8"
-}
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
